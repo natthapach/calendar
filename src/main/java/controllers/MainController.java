@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import models.EventNote;
 import models.Schedule;
 import views.MainApplication;
@@ -18,17 +19,19 @@ public class MainController {
 //        schedule.addEvent(new EventNote("event2", "Hi Jim", new Date(1000), new Date(2000)));
 
 //        dbManager.writeData(schedule);
+
+
     }
 
     public Schedule getSchedule() {
         return schedule;
     }
 
-    public void newEventNote(EventNote eventNote){
-
+    public boolean newEventNote(EventNote eventNote){
+        return true;
     }
 
-    public void save(){
-
+    public boolean save(){
+        return true;
     }
 }

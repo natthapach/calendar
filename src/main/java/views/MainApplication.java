@@ -46,6 +46,8 @@ public class MainApplication extends Application {
             loader.setLocation(getClass().getResource("/MainView.fxml"));
             Pane mainLayout = loader.load();
             mainView = loader.getController();
+            mainView.setController(controller);
+
             Scene sc = new Scene(mainLayout);
             primaryStage.setScene(sc);
             primaryStage.setResizable(false);
