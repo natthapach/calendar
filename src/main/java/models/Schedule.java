@@ -16,6 +16,10 @@ public class Schedule {
     public void addEvent(EventNote event){
         events.add(event);
     }
+
+    public List<EventNote> getEvents(){
+        return events;
+    }
     public ArrayList<EventNote> getEventsByYear(final int year){
        return selectEvents(new EventSelector() {
            public boolean isSelected(EventNote e) {
