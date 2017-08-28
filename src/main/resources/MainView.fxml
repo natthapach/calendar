@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <FlowPane minWidth="-Infinity" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="AppNameLabel" prefHeight="75.0" prefWidth="142.0" text="Calendar" />
-         </children>
-      </FlowPane>
+      <BorderPane prefHeight="53.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <center>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="520.0" text="Calendar" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+         </center>
+      </BorderPane>
    </top>
-   <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <content>
-            <FlowPane fx:id="contentPane" prefHeight="643.0" prefWidth="1035.0" />
-         </content>
-      </ScrollPane>
-   </center>
    <right>
-      <FlowPane prefHeight="645.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <FlowPane alignment="TOP_RIGHT" orientation="VERTICAL" prefHeight="547.0" prefWidth="75.0" BorderPane.alignment="CENTER">
          <children>
-            <DatePicker fx:id="datePicker"/>
+            <Button fx:id="addBtn" alignment="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="25.0" prefWidth="60.0" text="Add" />
          </children>
       </FlowPane>
    </right>
+   <center>
+      <TableView fx:id="contentTabl" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="122.0" text="Date" />
+          <TableColumn prefWidth="118.0" text="Time" />
+            <TableColumn minWidth="0.0" prefWidth="184.0" text="Topic" />
+            <TableColumn prefWidth="700.0" text="Detail" />
+        </columns>
+      </TableView>
+   </center>
 </BorderPane>
