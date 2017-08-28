@@ -7,35 +7,50 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import models.EventNote;
+import models.Schedule;
 
 import java.io.IOException;
 
 public class MainApplication extends Application {
     private Stage primaryStage;
-    private BorderPane mainLayout;
+    private MainController controller;
+    private MainView mainView;
 
     public static void main(String[] args) {
         launch(args);
-        MainController controller = new MainController();
-        controller.start();
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
+        this.controller = new MainController();
+        this.controller.start();
         initRoot();
+        showEvents();
+    }
+
+    private void showEvents() {
+        Schedule schedule = controller.getSchedule();
+        for (EventNote event : schedule.getEvents()) {
+            BorderPane pane = new BorderPane();
+
+        }
     }
 
     private void initRoot() {
         try{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/MainView.fxml"));
-            mainLayout = loader.load();
+            Pane mainLayout = loader.load();
+            mainView = loader.getController();
             Scene sc = new Scene(mainLayout);
             primaryStage.setScene(sc);
             primaryStage.setResizable(false);
             primaryStage.show();
+            primaryStage.setTitle("Calendar");
         } catch (IOException e) {
             e.printStackTrace();
         }
