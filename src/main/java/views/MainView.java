@@ -38,11 +38,21 @@ public class MainView {
         ObservableList<TableColumn<EventNote, String>> columns = contentTable.getColumns();
 //        columns.get(0).setCellValueFactory(new PropertyValueFactory<EventNote, String>("startTime"));
         columns.get(0).setCellValueFactory(new PropertyValueFactory<EventNote, String>("startTime"));
+        columns.get(0).setCellValueFactory(new Callback<TableColumn.CellDataFeatures<EventNote, String>, ObservableValue<String>>() {
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<EventNote, String> param) {
+                SimpleStringProperty property = new SimpleStringProperty();
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                property.setValue(dateFormat.format(param.getValue().getStartTime()));
+                return property;
+            }
+        });
         columns.get(1).setCellValueFactory(new Callback<TableColumn.CellDataFeatures<EventNote, String>, ObservableValue<String>>() {
             public ObservableValue<String> call(TableColumn.CellDataFeatures<EventNote, String> param) {
                 SimpleStringProperty property = new SimpleStringProperty();
-                DateFormat dataFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm");
-                property.setValue(dataFormat.format(param.getValue().getStopTime()));
+                DateFormat dateFormat = new SimpleDateFormat("HH.mm");
+                String start = dateFormat.format(param.getValue().getStartTime());
+                String stop = dateFormat.format(param.getValue().getStopTime());
+                property.setValue(start + "-" + stop);
                 return property;
             }
         });
