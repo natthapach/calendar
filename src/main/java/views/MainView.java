@@ -84,7 +84,6 @@ public class MainView {
             primaryStage.setTitle("New Event");
             primaryStage.show();
 
-
         } catch (IOException e) {
             e.printStackTrace();
         }
