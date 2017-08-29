@@ -6,6 +6,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,10 +15,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.DataFormat;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import models.EventNote;
 
 import java.awt.*;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -61,11 +65,29 @@ public class MainView {
     @FXML
     private void onClickAdd(){
         System.out.println("onClickAdd");
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("Date", "28/8/2560");
-        map.put("Time", "9.30-11.30");
-        map.put("Topic", "Event X");
-        map.put("Detail", "Hi JJ");
+//        Map<String, String> map = new HashMap<String, String>();
+//        map.put("Date", "28/8/2560");
+//        map.put("Time", "9.30-11.30");
+//        map.put("Topic", "Event X");
+//        map.put("Detail", "Hi JJ");
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/NewEventView.fxml"));
+            Pane mainLayout = loader.load();
+            NewEventView newEventView = loader.getController();
+//            mainView.setController(controller);
+
+            Scene sc = new Scene(mainLayout);
+            Stage primaryStage = new Stage();
+            primaryStage.setScene(sc);
+            primaryStage.setResizable(false);
+            primaryStage.setTitle("New Event");
+            primaryStage.show();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69cf1e49-af09-4b58-aac7-f0f6819adf5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" afterPath="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,8 +47,8 @@
       <file leaf-file-name="MainApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/MainApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="561">
+              <caret line="47" column="46" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -55,13 +56,13 @@
       </file>
       <file leaf-file-name="NewEventView.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/NewEventView.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="246" lean-forward="true" selection-start-line="13" selection-start-column="246" selection-end-line="13" selection-end-column="246" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
         </entry>
@@ -124,14 +125,14 @@
       <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-37">
-              <caret line="37" column="91" lean-forward="false" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
+            <state relative-caret-position="458">
+              <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1202#1693#0" expanded="true" />
-                <element signature="e#1692#1693#0" expanded="true" />
-                <element signature="e#1739#2357#0" expanded="true" />
-                <element signature="e#2356#2357#0" expanded="true" />
+                <element signature="e#1315#1806#0" expanded="true" />
+                <element signature="e#1805#1806#0" expanded="true" />
+                <element signature="e#1852#2470#0" expanded="true" />
+                <element signature="e#2469#2470#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,8 +198,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/views/MainApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/views/MainView.java" />
         <option value="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/views/MainView.java" />
       </list>
     </option>
   </component>
@@ -256,6 +257,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -696,7 +715,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503999566223</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create NewEventView.fxml">
+      <created>1503999672860</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1503999672860</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1190,28 +1216,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="37" column="91" lean-forward="false" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1202#1693#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1739#2357#0" expanded="true" />
-            <element signature="e#2356#2357#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/NewEventView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1220,14 +1224,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/NewEventView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/MainApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        <state relative-caret-position="561">
+          <caret line="47" column="46" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1315#1806#0" expanded="true" />
+            <element signature="e#1805#1806#0" expanded="true" />
+            <element signature="e#1852#2470#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/NewEventView.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="246" lean-forward="true" selection-start-line="13" selection-start-column="246" selection-end-line="13" selection-end-column="246" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
     </entry>
