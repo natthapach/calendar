@@ -64,6 +64,10 @@ public class MainView {
         columns.get(3).setCellValueFactory(new PropertyValueFactory<EventNote, String>("detail"));
     }
     @FXML
+    private void onClickSave(){
+        controller.save();
+    }
+    @FXML
     private void onClickAdd(){
         System.out.println("onClickAdd");
         try {

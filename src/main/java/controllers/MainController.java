@@ -12,9 +12,10 @@ import java.util.Date;
 public class MainController {
 
     private Schedule schedule;
+    private DatabaseManager dbManager;
 
     public void start(){
-        DatabaseManager dbManager = JSONManager.getInstance();
+        this.dbManager = JSONManager.getInstance();
         this.schedule = dbManager.loadData();
 //        schedule.addEvent(new EventNote("event2", "Hi Jim", new Date(1000), new Date(2000)));
 
@@ -33,7 +34,7 @@ public class MainController {
         System.out.println("schedule.getEvents() = " + schedule.getEvents());
     }
 
-    public boolean save(){
-        return true;
+    public void save(){
+        dbManager.writeData(this.schedule);
     }
 }
