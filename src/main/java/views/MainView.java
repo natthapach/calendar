@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.DataFormat;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import models.EventNote;
@@ -65,24 +66,21 @@ public class MainView {
     @FXML
     private void onClickAdd(){
         System.out.println("onClickAdd");
-//        Map<String, String> map = new HashMap<String, String>();
-//        map.put("Date", "28/8/2560");
-//        map.put("Time", "9.30-11.30");
-//        map.put("Topic", "Event X");
-//        map.put("Detail", "Hi JJ");
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/NewEventView.fxml"));
             Pane mainLayout = loader.load();
             NewEventView newEventView = loader.getController();
-//            mainView.setController(controller);
+            newEventView.setController(controller);
 
             Scene sc = new Scene(mainLayout);
             Stage primaryStage = new Stage();
             primaryStage.setScene(sc);
             primaryStage.setResizable(false);
             primaryStage.setTitle("New Event");
-            primaryStage.show();
+            primaryStage.initModality(Modality.APPLICATION_MODAL);
+            primaryStage.showAndWait();
+            contentTable.refresh();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,7 +90,7 @@ public class MainView {
 
     public void setController(MainController controller){
         this.controller = controller;
-        this.data = FXCollections.observableArrayList(controller.getSchedule().getEvents());
+        this.data = FXCollections.observableList(controller.getSchedule().getEvents());
         System.out.println(controller.getSchedule().getEvents());
         this.contentTable.setItems(this.data);
     }

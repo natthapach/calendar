@@ -27,8 +27,10 @@ public class MainController {
         return schedule;
     }
 
-    public boolean newEventNote(EventNote eventNote){
-        return true;
+    public void addEventNote(EventNote eventNote){
+        schedule.addEvent(eventNote);
+        System.out.println("add on controller");
+        System.out.println("schedule.getEvents() = " + schedule.getEvents());
     }
 
     public boolean save(){
