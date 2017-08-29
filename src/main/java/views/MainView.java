@@ -36,7 +36,6 @@ public class MainView {
     @FXML
     public void initialize(){
         ObservableList<TableColumn<EventNote, String>> columns = contentTable.getColumns();
-//        columns.get(0).setCellValueFactory(new PropertyValueFactory<EventNote, String>("startTime"));
         columns.get(0).setCellValueFactory(new PropertyValueFactory<EventNote, String>("startTime"));
         columns.get(0).setCellValueFactory(new Callback<TableColumn.CellDataFeatures<EventNote, String>, ObservableValue<String>>() {
             public ObservableValue<String> call(TableColumn.CellDataFeatures<EventNote, String> param) {

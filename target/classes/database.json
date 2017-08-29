@@ -1,22 +1,9 @@
 {
-  "data": [
-    {
-      "topic": "event1",
-      "detail": "hi john",
-      "start_time": "16-05-0931 09.30",
-      "stop_time": "16-05-0931 11.00"
-    },
-    {
-      "topic": "event2",
-      "detail": "Hi Jim",
-      "start_time": "01-01-1427 07.00",
-      "stop_time": "01-01-1427 07.00"
-    },
-    {
-      "topic": "event2",
-      "detail": "Hi Jim",
-      "start_time": "01-01-1970 07.00",
-      "stop_time": "01-01-1970 07.00"
-    }
-  ]
+	"data" : [
+		{"topic" : "event1",
+		"detail" : "hi john",
+		"start_time": "16-05-2017 09.30",
+		"stop_time": "16-05-2017 11.00"
+		}
+	]
 }
