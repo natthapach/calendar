@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69cf1e49-af09-4b58-aac7-f0f6819adf5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/views/NewEventView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/MainController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/MainController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/views/MainApplication.class" afterPath="$PROJECT_DIR$/target/classes/views/MainApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/views/MainView.class" afterPath="$PROJECT_DIR$/target/classes/views/MainView.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MainView.fxml" afterPath="$PROJECT_DIR$/target/classes/MainView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/database.json" afterPath="$PROJECT_DIR$/target/classes/database.json" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -695,7 +689,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503992907469</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="create NewEventView.fxml">
+      <created>1503999566223</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1503999566223</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -764,7 +765,8 @@
     <MESSAGE value="create plan ui" />
     <MESSAGE value="plan to mvc" />
     <MESSAGE value="implement mvc" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement mvc" />
+    <MESSAGE value="create NewEventView.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="create NewEventView.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
