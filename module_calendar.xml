@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_calendar" default="compile.module.calendar">
+  <dirname property="module.calendar.basedir" file="${ant.file.module_calendar}"/>
+  
+  <property name="module.jdk.home.calendar" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.calendar" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.calendar" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.calendar" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="calendar.output.dir" value="${module.calendar.basedir}/target/classes"/>
+  <property name="calendar.testoutput.dir" value="${module.calendar.basedir}/target/test-classes"/>
+  
+  <path id="calendar.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="calendar.module.production.classpath">
+    <path refid="${module.jdk.classpath.calendar}"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.6.2.classpath"/>
+  </path>
+  
+  <path id="calendar.runtime.production.module.classpath">
+    <pathelement location="${calendar.output.dir}"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.6.2.classpath"/>
+  </path>
+  
+  <path id="calendar.module.classpath">
+    <path refid="${module.jdk.classpath.calendar}"/>
+    <pathelement location="${calendar.output.dir}"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.6.2.classpath"/>
+  </path>
+  
+  <path id="calendar.runtime.module.classpath">
+    <pathelement location="${calendar.testoutput.dir}"/>
+    <pathelement location="${calendar.output.dir}"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.6.2.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.calendar">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.calendar">
+    <patternset refid="excluded.from.module.calendar"/>
+  </patternset>
+  
+  <path id="calendar.module.sourcepath">
+    <dirset dir="${module.calendar.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="calendar.module.test.sourcepath">
+    <dirset dir="${module.calendar.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.calendar" depends="compile.module.calendar.production,compile.module.calendar.tests" description="Compile module calendar"/>
+  
+  <target name="compile.module.calendar.production" depends="register.custom.compilers" description="Compile module calendar; production classes">
+    <mkdir dir="${calendar.output.dir}"/>
+    <javac2 destdir="${calendar.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.calendar}/javac">
+      <compilerarg line="${compiler.args.calendar}"/>
+      <bootclasspath refid="calendar.module.bootclasspath"/>
+      <classpath refid="calendar.module.production.classpath"/>
+      <src refid="calendar.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.calendar"/>
+    </javac2>
+    
+    <copy todir="${calendar.output.dir}">
+      <fileset dir="${module.calendar.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.calendar.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.calendar.tests" depends="register.custom.compilers,compile.module.calendar.production" description="compile module calendar; test classes" unless="skip.tests">
+    <mkdir dir="${calendar.testoutput.dir}"/>
+    <javac2 destdir="${calendar.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.calendar}/javac">
+      <compilerarg line="${compiler.args.calendar}"/>
+      <bootclasspath refid="calendar.module.bootclasspath"/>
+      <classpath refid="calendar.module.classpath"/>
+      <src refid="calendar.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.calendar"/>
+    </javac2>
+    
+    <copy todir="${calendar.testoutput.dir}">
+      <fileset dir="${module.calendar.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.calendar" description="cleanup module">
+    <delete dir="${calendar.output.dir}"/>
+    <delete dir="${calendar.testoutput.dir}"/>
+  </target>
+</project>

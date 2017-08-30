@@ -37,7 +37,10 @@ public class JSONManager implements DatabaseManager {
         Schedule schedule = null;
         BufferedReader reader = null;
         try {
+//            InputStream in = JSONManager.class.getClassLoader().getResourceAsStream(DB_URL);
             File f = new File(this.getClass().getResource(DB_URL).toURI());
+            reader = new BufferedReader(new FileReader(f));
+//            System.out.println("in = " + in);
             reader = new BufferedReader(new FileReader(f));
             Object obj = parser.parse(reader);
             schedule = gson.fromJson(obj.toString(), Schedule.class);

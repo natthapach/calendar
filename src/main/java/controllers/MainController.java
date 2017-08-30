@@ -3,6 +3,8 @@ package controllers;
 import models.EventNote;
 import models.Schedule;
 
+import java.util.ArrayList;
+
 public class MainController {
 
     private Schedule schedule;
@@ -11,11 +13,8 @@ public class MainController {
     public void start(){
         this.dbManager = JSONManager.getInstance();
         this.schedule = dbManager.loadData();
-//        schedule.addEvent(new EventNote("event2", "Hi Jim", new Date(1000), new Date(2000)));
-
-//        dbManager.writeData(schedule);
-
-
+        this.schedule = new Schedule();
+        schedule.setEvents(new ArrayList<>());
     }
 
     public Schedule getSchedule() {

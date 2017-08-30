@@ -27,4 +27,12 @@ public class Schedule {
     public String toString(){
         return "Schedule : " + events;
     }
+
+    /**
+     * use for debug only
+     * @param events
+     */
+    public void setEvents(List<EventNote> events){
+        this.events = events;
+    }
 }
