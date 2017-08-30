@@ -76,18 +76,17 @@ public class MainView {
             newEventView.setController(controller);
 
             Scene sc = new Scene(mainLayout);
-            Stage primaryStage = new Stage();
-            primaryStage.setScene(sc);
-            primaryStage.setResizable(false);
-            primaryStage.setTitle("New Event");
-            primaryStage.initModality(Modality.APPLICATION_MODAL);
-            primaryStage.showAndWait();
+            Stage newEventStage = new Stage();
+            newEventStage.setScene(sc);
+            newEventStage.setResizable(false);
+            newEventStage.setTitle("New Event");
+            newEventStage.initModality(Modality.APPLICATION_MODAL);
+            newEventStage.showAndWait();
             contentTable.refresh();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     /**
