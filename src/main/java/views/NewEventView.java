@@ -35,6 +35,11 @@ public class NewEventView {
     @FXML   private Spinner<Integer> endMins;
     private MainController controller;
 
+    /**
+     * handle on click submit button
+     * check empty topic to alert popup
+     * create new EventNote and send to controller
+     */
     @FXML
     private void onClickSubmit(){
         String topic = topicTextField.getText();
@@ -58,25 +63,32 @@ public class NewEventView {
         Stage stage = (Stage) topicTextField.getScene().getWindow();
         stage.close();
     }
+
+    /**
+     * set controller to NewEventView object
+     * @param controller
+     */
     public void setController(MainController controller){
         this.controller = controller;
     }
+
+    /**
+     * set default datePicker's value
+     */
     @FXML
     public void initialize(){
         datePicker.setValue(LocalDate.now());
     }
 
+    /**
+     * show empty topic alert
+     */
     private void showEmptyTopicDialog(){
         Stage dialogStage = new Stage();
         dialogStage.initModality(Modality.APPLICATION_MODAL);
         dialogStage.initStyle(StageStyle.UTILITY);
         Button okBtn = new Button("Ok");
-        okBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                dialogStage.close();
-            }
-        });
+        okBtn.setOnAction(event -> { dialogStage.close();});
         VBox vbox = new VBox(new Text("Please enter topic"), okBtn);
         vbox.setSpacing(15);
         vbox.setAlignment(Pos.CENTER);

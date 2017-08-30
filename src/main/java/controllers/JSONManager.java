@@ -3,23 +3,21 @@ package controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import models.EventNote;
 import models.Schedule;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-
 import java.io.*;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 public class JSONManager implements DatabaseManager {
     private static JSONManager instance;
     private final String DB_URL = "/database.json";
     private Gson gson;
 
+    /**
+     * get instance of database manager
+     * @return  database manager instance
+     */
     public static JSONManager getInstance(){
         if(instance == null)
             instance = new JSONManager();
@@ -30,6 +28,10 @@ public class JSONManager implements DatabaseManager {
         gson = new GsonBuilder().setDateFormat("dd-MM-yyyy HH.mm").create();
     }
 
+    /**
+     * load data from json file to schedule
+     * @return schedule that contain events from json database
+     */
     public Schedule loadData() {
         JSONParser parser = new JSONParser();
         Schedule schedule = null;
@@ -61,6 +63,11 @@ public class JSONManager implements DatabaseManager {
         return schedule;
     }
 
+
+    /**
+     * write events in schedule to json database
+     * @param schedule  schedule that contain events
+     */
     public void writeData(Schedule schedule) {
         System.out.println("on write");
         System.out.println("schedule = " + schedule);

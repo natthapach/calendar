@@ -1,5 +1,3 @@
-package views;
-
 import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import models.EventNote;
 import models.Schedule;
+import views.MainView;
 
 import java.io.IOException;
 

@@ -9,17 +9,27 @@ public class Schedule {
 
     @SerializedName("data") private List<EventNote> events;
 
-//    public Schedule(List<EventNote> events) {
-//        this.events = events;
-//    }
-
+    /**
+     * add new event to events
+     * @param event new event
+     */
     public void addEvent(EventNote event){
         events.add(event);
     }
 
+    /**
+     *
+     * @return list of all event note
+     */
     public List<EventNote> getEvents(){
         return events;
     }
+
+    /**
+     * filter events from target year
+     * @param year  target year
+     * @return list of events in target year
+     */
     public ArrayList<EventNote> getEventsByYear(final int year){
        return selectEvents(new EventSelector() {
            public boolean isSelected(EventNote e) {
@@ -27,6 +37,13 @@ public class Schedule {
            }
        });
     }
+
+    /**
+     * filter events from target month
+     * @param year year of month
+     * @param month
+     * @return
+     */
     public ArrayList<EventNote> getEventsByMonth(final int year, final int month) {
         return selectEvents(new EventSelector() {
             public boolean isSelected(EventNote e) {

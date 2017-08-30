@@ -10,22 +10,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.DataFormat;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import models.EventNote;
-
-import java.awt.*;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainView {
 
@@ -34,39 +26,46 @@ public class MainView {
     @FXML   private Button addBtn;
     @FXML   private TableView contentTable;
 
-    public MainView() {
-
-    }
-
     @FXML
     public void initialize(){
-        ObservableList<TableColumn<EventNote, String>> columns = contentTable.getColumns();
-        columns.get(0).setCellValueFactory(new PropertyValueFactory<EventNote, String>("startTime"));
-        columns.get(0).setCellValueFactory(new Callback<TableColumn.CellDataFeatures<EventNote, String>, ObservableValue<String>>() {
-            public ObservableValue<String> call(TableColumn.CellDataFeatures<EventNote, String> param) {
-                SimpleStringProperty property = new SimpleStringProperty();
-                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-                property.setValue(dateFormat.format(param.getValue().getStartTime()));
-                return property;
-            }
-        });
-        columns.get(1).setCellValueFactory(new Callback<TableColumn.CellDataFeatures<EventNote, String>, ObservableValue<String>>() {
-            public ObservableValue<String> call(TableColumn.CellDataFeatures<EventNote, String> param) {
-                SimpleStringProperty property = new SimpleStringProperty();
-                DateFormat dateFormat = new SimpleDateFormat("HH.mm");
-                String start = dateFormat.format(param.getValue().getStartTime());
-                String stop = dateFormat.format(param.getValue().getStopTime());
-                property.setValue(start + "-" + stop);
-                return property;
-            }
-        });
-        columns.get(2).setCellValueFactory(new PropertyValueFactory<EventNote, String>("topic"));
-        columns.get(3).setCellValueFactory(new PropertyValueFactory<EventNote, String>("detail"));
+        initColumn();
     }
+
+    /**
+     * set CellValueFactory of all column
+     */
+    private void initColumn() {
+        ObservableList<TableColumn<EventNote, String>> columns = contentTable.getColumns();
+        columns.get(0).setCellValueFactory(new PropertyValueFactory<>("startTime"));
+        columns.get(0).setCellValueFactory(param -> {
+            SimpleStringProperty property = new SimpleStringProperty();
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            property.setValue(dateFormat.format(param.getValue().getStartTime()));
+            return property;
+        });
+        columns.get(1).setCellValueFactory(param -> {
+            SimpleStringProperty property = new SimpleStringProperty();
+            DateFormat dateFormat = new SimpleDateFormat("HH.mm");
+            String start = dateFormat.format(param.getValue().getStartTime());
+            String stop = dateFormat.format(param.getValue().getStopTime());
+            property.setValue(start + "-" + stop);
+            return property;
+        });
+        columns.get(2).setCellValueFactory(new PropertyValueFactory<>("topic"));
+        columns.get(3).setCellValueFactory(new PropertyValueFactory<>("detail"));
+    }
+
+    /**
+     * handle on click save button
+     */
     @FXML
     private void onClickSave(){
         controller.save();
     }
+
+    /**
+     * handle on click add button
+     */
     @FXML
     private void onClickAdd(){
         System.out.println("onClickAdd");
@@ -92,10 +91,16 @@ public class MainView {
 
     }
 
+    /**
+     * set controller to this view
+     * @param controller
+     */
     public void setController(MainController controller){
         this.controller = controller;
         this.data = FXCollections.observableList(controller.getSchedule().getEvents());
         System.out.println(controller.getSchedule().getEvents());
         this.contentTable.setItems(this.data);
     }
+
+
 }

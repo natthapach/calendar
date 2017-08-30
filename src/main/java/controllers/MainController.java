@@ -1,13 +1,7 @@
 package controllers;
 
-import javafx.application.Application;
-import javafx.collections.ObservableList;
 import models.EventNote;
 import models.Schedule;
-import views.MainApplication;
-import views.MainView;
-
-import java.util.Date;
 
 public class MainController {
 
