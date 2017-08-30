@@ -24,7 +24,7 @@
    <right>
       <FlowPane alignment="TOP_RIGHT" orientation="VERTICAL" prefHeight="547.0" prefWidth="75.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="addBtn" alignment="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="25.0" prefWidth="60.0" text="Add">
+            <Button fx:id="addBtn" alignment="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="25.0" prefWidth="60.0" text="New">
                <FlowPane.margin>
                   <Insets right="5.0" />
                </FlowPane.margin></Button>

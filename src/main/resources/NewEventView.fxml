@@ -102,7 +102,7 @@
             </FlowPane>
             <FlowPane alignment="CENTER" prefHeight="45.0" prefWidth="332.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onClickSubmit" text="Submit" />
+                  <Button mnemonicParsing="false" onAction="#onClickSubmit" text="Add" />
                </children>
             </FlowPane>
          </children>
