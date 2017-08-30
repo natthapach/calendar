@@ -1,7 +1,6 @@
 package models;
 
 import com.google.gson.annotations.SerializedName;
-
 import java.util.Date;
 
 public class EventNote implements Comparable<EventNote>{
