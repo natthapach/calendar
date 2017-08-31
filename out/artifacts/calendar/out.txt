@@ -1,0 +1,3 @@
+in = sun.net.www.protocol.jar.JarURLConnection$JarURLInputStream@2fbb7ce8
+schedule = Schedule : [Event Note (event1, hi john, Tue May 16 09:30:00 ICT 2017, Tue May 16 11:00:00 ICT 2017)]
+[Event Note (event1, hi john, Tue May 16 09:30:00 ICT 2017, Tue May 16 11:00:00 ICT 2017)]
