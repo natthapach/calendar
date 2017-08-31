@@ -28,11 +28,4 @@ public class Schedule {
         return "Schedule : " + events;
     }
 
-    /**
-     * use for debug only
-     * @param events
-     */
-    public void setEvents(List<EventNote> events){
-        this.events = events;
-    }
 }

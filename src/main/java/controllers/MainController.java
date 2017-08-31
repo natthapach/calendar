@@ -13,8 +13,8 @@ public class MainController {
     public void start(){
         this.dbManager = JSONManager.getInstance();
         this.schedule = dbManager.loadData();
-        this.schedule = new Schedule();
-        schedule.setEvents(new ArrayList<>());
+//        this.schedule = new Schedule();
+//        schedule.setEvents(new ArrayList<>());
     }
 
     public Schedule getSchedule() {
@@ -30,4 +30,5 @@ public class MainController {
     public void save(){
         dbManager.writeData(this.schedule);
     }
+
 }

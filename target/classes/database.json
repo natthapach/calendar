@@ -1,16 +1,9 @@
 {
-  "data": [
-    {
-      "topic": "Met Jane",
-      "detail": "dinner with old friend  JANE!!",
-      "start_time": "15-09-2017 16.30",
-      "stop_time": "15-09-2017 18.00"
-    },
-    {
-      "topic": "My Birth Day",
-      "detail": "Happy birth day to me",
-      "start_time": "16-09-2017 08.00",
-      "stop_time": "16-09-2017 08.30"
-    }
-  ]
+	"data" : [
+		{"topic" : "event1",
+		"detail" : "hi john",
+		"start_time": "16-05-2017 09.30",
+		"stop_time": "16-05-2017 11.00"
+		}
+	]
 }

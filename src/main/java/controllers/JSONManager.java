@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 
 public class JSONManager implements DatabaseManager {
     private static JSONManager instance;
-    private final String DB_URL = "/database.json";
+    private final String DB_URL = "database.json";
     private Gson gson;
 
     /**
@@ -37,11 +37,12 @@ public class JSONManager implements DatabaseManager {
         Schedule schedule = null;
         BufferedReader reader = null;
         try {
-//            InputStream in = JSONManager.class.getClassLoader().getResourceAsStream(DB_URL);
-            File f = new File(this.getClass().getResource(DB_URL).toURI());
-            reader = new BufferedReader(new FileReader(f));
-//            System.out.println("in = " + in);
-            reader = new BufferedReader(new FileReader(f));
+//            File f = new File(this.getClass().getResource(DB_URL).toURI());
+//            reader = new BufferedReader(new FileReader(f))
+            InputStream in = JSONManager.class.getClassLoader().getResourceAsStream(DB_URL);
+            System.out.println("in = " + in);
+            reader = new BufferedReader(new InputStreamReader(in));
+
             Object obj = parser.parse(reader);
             schedule = gson.fromJson(obj.toString(), Schedule.class);
             System.out.println("schedule = " + schedule);
@@ -52,9 +53,11 @@ public class JSONManager implements DatabaseManager {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } finally {
+        }
+//        catch (URISyntaxException e) {
+//            e.printStackTrace();
+//        }
+        finally {
             try {
                 if(reader != null)
                     reader.close();

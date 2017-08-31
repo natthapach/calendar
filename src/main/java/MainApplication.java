@@ -47,7 +47,7 @@ public class MainApplication extends Application {
 
             Scene sc = new Scene(mainLayout);
             primaryStage.setScene(sc);
-            primaryStage.setResizable(false);
+//            primaryStage.setResizable(false);
             primaryStage.show();
             primaryStage.setTitle("Calendar");
         } catch (IOException e) {
