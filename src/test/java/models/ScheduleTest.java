@@ -15,7 +15,6 @@ public class ScheduleTest {
 
     @Before
     public void setUp() throws Exception {
-        schedule = new Schedule();
         Field eventsField = schedule.getClass().getDeclaredField("events");
         eventsField.setAccessible(true);
 
@@ -25,6 +24,7 @@ public class ScheduleTest {
             Date edate = new Date(1000 + i*101);
             events.add(new EventNote("event "+i, "detail", sdate, edate));
         }
+        schedule = new Schedule(events);
 
         eventsField.set(schedule, events);
     }

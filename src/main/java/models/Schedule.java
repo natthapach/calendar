@@ -1,11 +1,21 @@
 package models;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Schedule {
 
     @SerializedName("data") private List<EventNote> events;
+
+    public Schedule() {
+        this(new ArrayList<>());
+    }
+
+    public Schedule(List<EventNote> events) {
+        this.events = events;
+    }
 
     /**
      * add new event to events
