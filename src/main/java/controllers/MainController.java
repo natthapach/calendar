@@ -5,7 +5,7 @@ import models.Schedule;
 
 import java.util.ArrayList;
 
-public class MainController {
+public class MainController implements CoreController{
 
     private Schedule schedule;
     private DatabaseManager dbManager;
@@ -22,7 +22,17 @@ public class MainController {
         return schedule;
     }
 
-    public void addEventNote(EventNote eventNote){
+    @Override
+    public void editEvent(EventNote oldEvent, EventNote newEvent) {
+
+    }
+
+    @Override
+    public void deleteEvent(EventNote event) {
+
+    }
+
+    public void addEvent(EventNote eventNote){
         schedule.addEvent(eventNote);
         System.out.println("add on controller");
         System.out.println("schedule.getEvents() = " + schedule.getEvents());

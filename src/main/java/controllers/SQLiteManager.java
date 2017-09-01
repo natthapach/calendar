@@ -73,6 +73,18 @@ public class SQLiteManager implements DatabaseManager {
     }
 
     @Override
-    public void writeData(Schedule schedule) {
+    public boolean update(EventNote oldEvent, EventNote newEvent) {
+        return false;
     }
+
+    @Override
+    public boolean add(EventNote event) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(EventNote event) {
+        return false;
+    }
+
 }

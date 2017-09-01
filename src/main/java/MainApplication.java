@@ -1,3 +1,4 @@
+import controllers.CoreController;
 import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,13 +9,14 @@ import javafx.stage.Stage;
 import models.EventNote;
 import models.Schedule;
 import views.MainView;
+import views.RootView;
 
 import java.io.IOException;
 
 public class MainApplication extends Application {
     private Stage primaryStage;
-    private MainController controller;
-    private MainView mainView;
+    private CoreController controller;
+    private RootView mainView;
 
     public static void main(String[] args) {
         launch(args);

@@ -1,5 +1,6 @@
 package views;
 
+import controllers.CoreController;
 import controllers.MainController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -18,9 +19,9 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-public class MainView {
+public class MainView implements RootView{
 
-    private MainController controller;
+    private CoreController controller;
     private ObservableList<EventNote> data;
     @FXML   private Button addBtn;
     @FXML   private TableView contentTable;
@@ -73,7 +74,7 @@ public class MainView {
             loader.setLocation(getClass().getResource("/NewEventView.fxml"));
             Pane mainLayout = loader.load();
             NewEventView newEventView = loader.getController();
-            newEventView.setController(controller);
+            newEventView.setRoot(this);
 
             Scene sc = new Scene(mainLayout);
             Stage newEventStage = new Stage();
@@ -93,7 +94,7 @@ public class MainView {
      * set controller to this view
      * @param controller
      */
-    public void setController(MainController controller){
+    public void setController(CoreController controller){
         this.controller = controller;
         this.data = FXCollections.observableList(controller.getSchedule().getEvents());
         System.out.println(controller.getSchedule().getEvents());
@@ -101,4 +102,18 @@ public class MainView {
     }
 
 
+    @Override
+    public void edit(EventNote oldEvent, EventNote newEvent) {
+        controller.editEvent(oldEvent, newEvent);
+    }
+
+    @Override
+    public void delete(EventNote event) {
+        controller.deleteEvent(event);
+    }
+
+    @Override
+    public void add(EventNote event) {
+        controller.addEvent(event);
+    }
 }

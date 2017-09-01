@@ -27,7 +27,7 @@ public class NewEventView {
     @FXML   private Spinner<Integer> startMins;
     @FXML   private Spinner<Integer> endHour;
     @FXML   private Spinner<Integer> endMins;
-    private MainController controller;
+    private RootView root;
 
     /**
      * handle on click submit button
@@ -52,18 +52,15 @@ public class NewEventView {
 
         EventNote event = new EventNote(topic, detail, startTime, stopTime);
 
-        controller.addEventNote(event);
+        root.add(event);
 
         Stage stage = (Stage) topicTextField.getScene().getWindow();
         stage.close();
     }
 
-    /**
-     * set controller to NewEventView object
-     * @param controller
-     */
-    public void setController(MainController controller){
-        this.controller = controller;
+
+    public void setRoot(RootView root) {
+        this.root = root;
     }
 
     /**
