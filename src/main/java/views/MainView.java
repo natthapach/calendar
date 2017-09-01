@@ -59,7 +59,7 @@ public class MainView {
      */
     @FXML
     private void onClickSave(){
-        controller.save();
+//        controller.save();
     }
 
     /**

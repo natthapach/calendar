@@ -28,8 +28,8 @@ public class MainController {
         System.out.println("schedule.getEvents() = " + schedule.getEvents());
     }
 
-    public void save(){
-        dbManager.writeData(this.schedule);
-    }
+//    public void save(){
+//        dbManager.writeData(this.schedule);
+//    }
 
 }

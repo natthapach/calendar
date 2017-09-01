@@ -1,5 +1,6 @@
 package controllers;
 
+import models.EventNote;
 import models.Schedule;
 
 public interface DatabaseManager {
@@ -8,11 +9,8 @@ public interface DatabaseManager {
      * @return  schedule contain events from database
      */
     Schedule loadData();
-
-    /**
-     * write all events in schedule to database
-     * @param schedule  schedule that contain events
-     */
-    void writeData(Schedule schedule);
+    boolean update(EventNote oldEvent, EventNote newEvent);
+    boolean add(EventNote event);
+    boolean delete(EventNote event);
 }
 

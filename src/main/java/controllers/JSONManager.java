@@ -3,12 +3,16 @@ package controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import models.EventNote;
 import models.Schedule;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.net.URISyntaxException;
 
+/**
+ * Unsupported since lab 4
+ */
 public class JSONManager implements DatabaseManager {
     private static JSONManager instance;
     private final String DB_URL = "database.json";
@@ -67,6 +71,21 @@ public class JSONManager implements DatabaseManager {
         }
 
         return schedule;
+    }
+
+    @Override
+    public boolean update(EventNote oldEvent, EventNote newEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean add(EventNote event) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(EventNote event) {
+        return false;
     }
 
 
