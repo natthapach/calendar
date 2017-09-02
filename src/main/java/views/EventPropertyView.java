@@ -5,6 +5,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import models.EventNote;
 import java.time.ZoneId;
 
@@ -23,14 +24,19 @@ public class EventPropertyView {
 
     @FXML
     private void onClickSave(){
-
+        close();
     }
 
     @FXML
     private void onClickDelete(){
-
+        root.delete(eventNote);
+        close();
     }
 
+    private void close(){
+        Stage stage = (Stage) topicTextField.getScene().getWindow();
+        stage.close();
+    }
     public void setRoot(RootView root) {
         this.root = root;
     }

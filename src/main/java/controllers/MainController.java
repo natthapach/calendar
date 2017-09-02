@@ -30,7 +30,11 @@ public class MainController implements CoreController{
 
     @Override
     public boolean deleteEvent(EventNote event) {
-        return true;
+        boolean result = dbManager.delete(event);
+        System.out.println("result = " + result);
+        if(result)
+            schedule.delete(event);
+        return result;
     }
 
     public boolean addEvent(EventNote eventNote){

@@ -70,7 +70,7 @@ public class MainView implements RootView{
     private void onClickAdd(){
         System.out.println("onClickAdd");
         createNewEventScene();
-        contentTable.refresh();
+        refreshContent();
     }
 
     @FXML
@@ -139,16 +139,26 @@ public class MainView implements RootView{
 
     @Override
     public void edit(EventNote oldEvent, EventNote newEvent) {
-        controller.editEvent(oldEvent, newEvent);
+        boolean result = controller.editEvent(oldEvent, newEvent);
+        if(result)
+            refreshContent();
     }
 
     @Override
     public void delete(EventNote event) {
-        controller.deleteEvent(event);
+        boolean result = controller.deleteEvent(event);
+        if(result)
+            refreshContent();
     }
 
     @Override
     public void add(EventNote event) {
-        controller.addEvent(event);
+        boolean result = controller.addEvent(event);
+        if(result)
+            refreshContent();
+    }
+
+    private void refreshContent(){
+        contentTable.refresh();
     }
 }

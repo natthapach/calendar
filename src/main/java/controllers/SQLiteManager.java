@@ -119,6 +119,28 @@ public class SQLiteManager implements DatabaseManager {
 
     @Override
     public boolean delete(EventNote event) {
+        try {
+            Connection conn = prepareConnection();
+
+            if(conn != null){
+                String topic = event.getTopic();
+                String startTime = formatter.format(event.getStartTime());
+
+                String sql = String.format("delete from events where topic = \"%s\" and start_time = \"%s\"", topic, startTime);
+                Statement statement = conn.createStatement();
+                int resultSet = statement.executeUpdate(sql);
+
+                System.out.println("resultSet = " + resultSet);
+
+                conn.close();
+
+                return true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Delete data failure " + e.getMessage());
+            System.err.println("Error code " + e.getErrorCode());
+        }
+
         return false;
     }
 

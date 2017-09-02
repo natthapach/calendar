@@ -25,6 +25,10 @@ public class Schedule {
         events.add(event);
     }
 
+    public void delete(EventNote event){
+        events.remove(event);
+    }
+
     /**
      *
      * @return list of all event note
