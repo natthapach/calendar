@@ -29,6 +29,11 @@ public class Schedule {
         events.remove(event);
     }
 
+    public void update(EventNote oldEvent, EventNote newEvent){
+        int i = events.indexOf(oldEvent);
+        events.set(i, newEvent);
+    }
+
     /**
      *
      * @return list of all event note

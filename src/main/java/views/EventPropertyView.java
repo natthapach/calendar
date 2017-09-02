@@ -1,16 +1,14 @@
 package views;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import models.EventNote;
 import java.time.ZoneId;
+import java.util.Date;
 
 
-public class EventPropertyView {
+public class EventPropertyView implements AlertableEmptyTopic {
     @FXML   private TextField topicTextField;
     @FXML   private TextArea detailTextArea;
     @FXML   private DatePicker datePicker;
@@ -24,6 +22,23 @@ public class EventPropertyView {
 
     @FXML
     private void onClickSave(){
+        String topic = topicTextField.getText();
+        if(topic.equals("")) {
+            showEmptyTopicDialog();
+            return;
+        }
+        String detail = detailTextArea.getText();
+        Date date = Date.from(datePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date startTime = ((Date) date.clone());
+        startTime.setHours(startHour.getValue());
+        startTime.setMinutes(startMins.getValue());
+        Date stopTime = ((Date) date.clone());
+        stopTime.setHours(endHour.getValue());
+        stopTime.setMinutes(endMins.getValue());
+
+        EventNote newEvent = new EventNote(topic, detail, startTime, stopTime);
+        root.edit(eventNote, newEvent);
+
         close();
     }
 
@@ -52,4 +67,5 @@ public class EventPropertyView {
         endHour.getValueFactory().setValue(eventNote.getStopTime().getHours());
         endMins.getValueFactory().setValue(eventNote.getStopTime().getMinutes());
     }
+
 }

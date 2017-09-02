@@ -24,8 +24,10 @@ public class MainController implements CoreController{
 
     @Override
     public boolean editEvent(EventNote oldEvent, EventNote newEvent) {
-
-        return true;
+        boolean result = dbManager.update(oldEvent, newEvent);
+        if(result)
+            schedule.update(oldEvent, newEvent);
+        return result;
     }
 
     @Override

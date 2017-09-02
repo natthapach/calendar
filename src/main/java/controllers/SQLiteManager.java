@@ -69,6 +69,36 @@ public class SQLiteManager implements DatabaseManager {
 
     @Override
     public boolean update(EventNote oldEvent, EventNote newEvent) {
+        try {
+            Connection conn = prepareConnection();
+
+            if(conn != null){
+                String oldTopic = oldEvent.getTopic();
+                String oldStartTime = formatter.format(oldEvent.getStartTime());
+
+                String topic = newEvent.getTopic();
+                String startTime = formatter.format(newEvent.getStartTime());
+                String detail = newEvent.getDetail();
+                String endTime = formatter.format(newEvent.getStopTime());
+
+                String query = String.format("update events " +
+                                            "set topic=\"%s\", detail=\"%s\", start_time=\"%s\", end_time=\"%s\" " +
+                                            "where topic=\"%s\" and start_time=\"%s\"",
+                                            topic, detail, startTime, endTime, oldTopic, oldStartTime);
+                Statement statement = conn.createStatement();
+                int resultSet = statement.executeUpdate(query);
+
+                System.out.println("resultSet = " + resultSet);
+
+                conn.close();
+
+                return true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Add data failure " + e.getMessage());
+            System.err.println("Error code " + e.getErrorCode());
+        }
+
         return false;
     }
 
