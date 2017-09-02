@@ -37,7 +37,7 @@
       </FlowPane>
    </right>
    <center>
-      <TableView fx:id="contentTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView onMouseClicked="#onClickTable" fx:id="contentTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="122.0" text="Date" />
           <TableColumn prefWidth="118.0" text="Time" />

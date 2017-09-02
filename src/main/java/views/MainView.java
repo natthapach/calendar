@@ -1,7 +1,6 @@
 package views;
 
 import controllers.CoreController;
-import controllers.MainController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -73,6 +73,15 @@ public class MainView implements RootView{
         contentTable.refresh();
     }
 
+    @FXML
+    private void onClickTable(MouseEvent e){
+        if (e.getClickCount() != 2)
+            return;
+
+        EventNote eventNote = (EventNote) contentTable.getSelectionModel().getSelectedItem();
+        createEventPropertyScene(eventNote);
+    }
+
     private void createNewEventScene(){
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -88,6 +97,28 @@ public class MainView implements RootView{
             newEventStage.setTitle("New Event");
             newEventStage.initModality(Modality.APPLICATION_MODAL);
             newEventStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createEventPropertyScene(EventNote eventNote){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/EventPropertyView.fxml"));
+            Pane mainLayout = loader.load();
+            EventPropertyView eventPropertyView = loader.getController();
+            eventPropertyView.setRoot(this);
+            eventPropertyView.setEventNote(eventNote);
+
+            Scene sc = new Scene(mainLayout);
+            Stage eventPropertyStage = new Stage();
+            eventPropertyStage.setScene(sc);
+            eventPropertyStage.setResizable(false);
+            eventPropertyStage.setTitle("Event Property");
+            eventPropertyStage.initModality(Modality.APPLICATION_MODAL);
+            eventPropertyStage.showAndWait();
 
         } catch (IOException e) {
             e.printStackTrace();
