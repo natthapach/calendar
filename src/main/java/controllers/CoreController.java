@@ -6,8 +6,8 @@ import java.awt.*;
 
 public interface CoreController {
     Schedule getSchedule();
-    void addEvent(EventNote event);
-    void editEvent(EventNote oldEvent, EventNote newEvent);
-    void deleteEvent(EventNote event);
+    boolean addEvent(EventNote event);
+    boolean editEvent(EventNote oldEvent, EventNote newEvent);
+    boolean deleteEvent(EventNote event);
     void start();
 }

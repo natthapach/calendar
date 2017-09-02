@@ -15,6 +15,7 @@ import java.util.Date;
 public class SQLiteManager implements DatabaseManager {
 
     private static SQLiteManager instance;
+    private final SimpleDateFormat formatter;
 
     public static SQLiteManager getInstance(){
         if (instance == null)
@@ -23,16 +24,14 @@ public class SQLiteManager implements DatabaseManager {
     }
 
     private SQLiteManager(){
-
+        formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm");
     }
 
     @Override
     public Schedule loadData() {
 
         try {
-            Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:schedule.db";
-            Connection conn = DriverManager.getConnection(dbURL);
+            Connection conn = prepareConnection();
 
             if(conn != null){
                 System.out.println("Connected to database ...");
@@ -44,7 +43,6 @@ public class SQLiteManager implements DatabaseManager {
                 List<EventNote> events = new ArrayList<>();
 
                 while(resultSet.next()){
-                    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm");
 
                     String topic = resultSet.getString(1);
                     String detail = resultSet.getString(2);
@@ -59,12 +57,9 @@ public class SQLiteManager implements DatabaseManager {
 
                 conn.close();
 
-
                 return new Schedule(events);
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        }  catch (SQLException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
@@ -79,7 +74,47 @@ public class SQLiteManager implements DatabaseManager {
 
     @Override
     public boolean add(EventNote event) {
+        try {
+            Connection conn = prepareConnection();
+
+            if(conn != null){
+                String topic = event.getTopic();
+                String detail = event.getDetail();
+                String startTime = formatter.format(event.getStartTime());
+                String endTime = formatter.format(event.getStopTime());
+
+                String query = String.format("insert into events values (\"%s\", \"%s\", \"%s\", \"%s\")", topic, detail, startTime, endTime);
+                Statement statement = conn.createStatement();
+                int resultSet = statement.executeUpdate(query);
+
+                System.out.println("resultSet = " + resultSet);
+
+                conn.close();
+
+                return true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Add data failure " + e.getMessage());
+            System.err.println("Error code " + e.getErrorCode());
+        }
+
         return false;
+    }
+
+    private Connection prepareConnection(){
+        try {
+            Class.forName("org.sqlite.JDBC");
+            String dbURL = "jdbc:sqlite:schedule.db";
+            Connection conn = DriverManager.getConnection(dbURL);
+
+            return conn;
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.err.println("connection Fail cannot find database");
+        }
+
+        return null;
     }
 
     @Override

@@ -23,23 +23,22 @@ public class MainController implements CoreController{
     }
 
     @Override
-    public void editEvent(EventNote oldEvent, EventNote newEvent) {
+    public boolean editEvent(EventNote oldEvent, EventNote newEvent) {
 
+        return true;
     }
 
     @Override
-    public void deleteEvent(EventNote event) {
-
+    public boolean deleteEvent(EventNote event) {
+        return true;
     }
 
-    public void addEvent(EventNote eventNote){
-        schedule.addEvent(eventNote);
-        System.out.println("add on controller");
-        System.out.println("schedule.getEvents() = " + schedule.getEvents());
-    }
+    public boolean addEvent(EventNote eventNote){
+        boolean result = dbManager.add(eventNote);
+        if(result)
+            schedule.addEvent(eventNote);
 
-//    public void save(){
-//        dbManager.writeData(this.schedule);
-//    }
+        return result;
+    }
 
 }

@@ -69,6 +69,11 @@ public class MainView implements RootView{
     @FXML
     private void onClickAdd(){
         System.out.println("onClickAdd");
+        createNewEventScene();
+        contentTable.refresh();
+    }
+
+    private void createNewEventScene(){
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/NewEventView.fxml"));
@@ -83,7 +88,6 @@ public class MainView implements RootView{
             newEventStage.setTitle("New Event");
             newEventStage.initModality(Modality.APPLICATION_MODAL);
             newEventStage.showAndWait();
-            contentTable.refresh();
 
         } catch (IOException e) {
             e.printStackTrace();
