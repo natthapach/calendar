@@ -8,11 +8,12 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="calendar.jar" size="14981" download="eager" />
+    <jar href="calendar.jar" size="24290" download="eager" />
     <jar href="gson-2.6.2.jar" size="229650" download="eager" />
     <jar href="hamcrest-core-1.1.jar" size="76643" download="eager" />
     <jar href="json-simple-1.1.1.jar" size="23931" download="eager" />
     <jar href="junit-4.10.jar" size="253160" download="eager" />
+    <jar href="sqlite-jdbc-3.20.0.jar" size="6637012" download="eager" />
   </resources>
   <jfx:javafx-desc  width="600" height="400" main-class="MainApplication"  name="calendar" />
   <update check="background"/>

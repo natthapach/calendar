@@ -20,6 +20,8 @@
       <element id="library" level="project" name="Maven: junit:junit:4.10" />
       <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.1" />
       <element id="file-copy" path="$PROJECT_DIR$/target/classes/database.json" />
+      <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.20.0" />
+      <element id="file-copy" path="$PROJECT_DIR$/schedule.db" />
     </root>
   </artifact>
 </component>

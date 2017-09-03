@@ -81,12 +81,12 @@ public class SQLiteManager implements DatabaseManager {
                 String detail = newEvent.getDetail();
                 String endTime = formatter.format(newEvent.getStopTime());
 
-                String query = String.format("update events " +
+                String sql = String.format("update events " +
                                             "set topic=\"%s\", detail=\"%s\", start_time=\"%s\", end_time=\"%s\" " +
                                             "where topic=\"%s\" and start_time=\"%s\"",
                                             topic, detail, startTime, endTime, oldTopic, oldStartTime);
                 Statement statement = conn.createStatement();
-                int resultSet = statement.executeUpdate(query);
+                int resultSet = statement.executeUpdate(sql);
 
                 System.out.println("resultSet = " + resultSet);
 
@@ -113,10 +113,11 @@ public class SQLiteManager implements DatabaseManager {
                 String startTime = formatter.format(event.getStartTime());
                 String endTime = formatter.format(event.getStopTime());
 
-                String query = String.format("insert into events values (\"%s\", \"%s\", \"%s\", \"%s\")", topic, detail, startTime, endTime);
+                String sql = String.format("insert into events " +
+                                             "values (\"%s\", \"%s\", \"%s\", \"%s\")",
+                                            topic, detail, startTime, endTime);
                 Statement statement = conn.createStatement();
-                int resultSet = statement.executeUpdate(query);
-
+                int resultSet = statement.executeUpdate(sql);
                 System.out.println("resultSet = " + resultSet);
 
                 conn.close();
@@ -125,6 +126,35 @@ public class SQLiteManager implements DatabaseManager {
             }
         } catch (SQLException e) {
             System.err.println("Add data failure " + e.getMessage());
+            System.err.println("Error code " + e.getErrorCode());
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean delete(EventNote event) {
+        try {
+            Connection conn = prepareConnection();
+
+            if(conn != null){
+                String topic = event.getTopic();
+                String startTime = formatter.format(event.getStartTime());
+
+                String sql = String.format("delete from events " +
+                                            "where topic = \"%s\" and start_time = \"%s\"",
+                                            topic, startTime);
+                Statement statement = conn.createStatement();
+                int resultSet = statement.executeUpdate(sql);
+
+                System.out.println("resultSet = " + resultSet);
+
+                conn.close();
+
+                return true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Delete data failure " + e.getMessage());
             System.err.println("Error code " + e.getErrorCode());
         }
 
@@ -145,33 +175,6 @@ public class SQLiteManager implements DatabaseManager {
         }
 
         return null;
-    }
-
-    @Override
-    public boolean delete(EventNote event) {
-        try {
-            Connection conn = prepareConnection();
-
-            if(conn != null){
-                String topic = event.getTopic();
-                String startTime = formatter.format(event.getStartTime());
-
-                String sql = String.format("delete from events where topic = \"%s\" and start_time = \"%s\"", topic, startTime);
-                Statement statement = conn.createStatement();
-                int resultSet = statement.executeUpdate(sql);
-
-                System.out.println("resultSet = " + resultSet);
-
-                conn.close();
-
-                return true;
-            }
-        } catch (SQLException e) {
-            System.err.println("Delete data failure " + e.getMessage());
-            System.err.println("Error code " + e.getErrorCode());
-        }
-
-        return false;
     }
 
 }
