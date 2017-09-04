@@ -22,6 +22,9 @@
       <element id="file-copy" path="$PROJECT_DIR$/target/classes/database.json" />
       <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.20.0" />
       <element id="file-copy" path="$PROJECT_DIR$/schedule.db" />
+      <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.0-RC3" />
+      <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-RC3" />
+      <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.0.0-RC1" />
     </root>
   </artifact>
 </component>

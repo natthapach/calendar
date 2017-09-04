@@ -73,17 +73,17 @@ public class SQLiteManager implements DatabaseManager {
             Connection conn = prepareConnection();
 
             if(conn != null){
-                String oldTopic = oldEvent.getTopic();
-                String oldStartTime = formatter.format(oldEvent.getStartTime());
+                String oldTopic = oldEvent.getTopic().replace("\'","\''");
+                String oldStartTime = formatter.format(oldEvent.getStartTime()).replace("\'","\''");
 
-                String topic = newEvent.getTopic();
-                String startTime = formatter.format(newEvent.getStartTime());
-                String detail = newEvent.getDetail();
-                String endTime = formatter.format(newEvent.getStopTime());
+                String topic = newEvent.getTopic().replace("\'","\''");
+                String startTime = formatter.format(newEvent.getStartTime()).replace("\'","\''");
+                String detail = newEvent.getDetail().replace("\'","\''");
+                String endTime = formatter.format(newEvent.getStopTime()).replace("\'","\''");
 
                 String sql = String.format("update events " +
-                                            "set topic=\"%s\", detail=\"%s\", start_time=\"%s\", end_time=\"%s\" " +
-                                            "where topic=\"%s\" and start_time=\"%s\"",
+                                            "set topic=\'%s\', detail=\'%s\', start_time=\'%s\', end_time=\'%s\' " +
+                                            "where topic=\'%s\' and start_time=\'%s\'",
                                             topic, detail, startTime, endTime, oldTopic, oldStartTime);
                 Statement statement = conn.createStatement();
                 int resultSet = statement.executeUpdate(sql);
@@ -108,17 +108,17 @@ public class SQLiteManager implements DatabaseManager {
             Connection conn = prepareConnection();
 
             if(conn != null){
-                String topic = event.getTopic();
-                String detail = event.getDetail();
-                String startTime = formatter.format(event.getStartTime());
-                String endTime = formatter.format(event.getStopTime());
+                String topic = event.getTopic().replace("\'","\''");
+                String detail = event.getDetail().replace("\'","\''");
+                String startTime = formatter.format(event.getStartTime()).replace("\'","\''");
+                String endTime = formatter.format(event.getStopTime()).replace("\'","\''");
 
                 String sql = String.format("insert into events " +
-                                             "values (\"%s\", \"%s\", \"%s\", \"%s\")",
+                                             "values (\'%s\', \'%s\', \'%s\', \'%s\')",
                                             topic, detail, startTime, endTime);
                 Statement statement = conn.createStatement();
                 int resultSet = statement.executeUpdate(sql);
-                System.out.println("resultSet = " + resultSet);
+                System.out.println("statement = " + statement);
 
                 conn.close();
 
@@ -138,11 +138,11 @@ public class SQLiteManager implements DatabaseManager {
             Connection conn = prepareConnection();
 
             if(conn != null){
-                String topic = event.getTopic();
-                String startTime = formatter.format(event.getStartTime());
+                String topic = event.getTopic().replace("\'","\''");
+                String startTime = formatter.format(event.getStartTime()).replace("\'","\''");
 
                 String sql = String.format("delete from events " +
-                                            "where topic = \"%s\" and start_time = \"%s\"",
+                                            "where topic = \'%s\' and start_time = \'%s\'",
                                             topic, startTime);
                 Statement statement = conn.createStatement();
                 int resultSet = statement.executeUpdate(sql);
