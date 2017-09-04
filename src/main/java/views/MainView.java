@@ -29,6 +29,7 @@ public class MainView implements RootView{
     @FXML
     public void initialize(){
         initColumn();
+        contentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     /**
@@ -53,6 +54,8 @@ public class MainView implements RootView{
         });
         columns.get(2).setCellValueFactory(new PropertyValueFactory<>("topic"));
         columns.get(3).setCellValueFactory(new PropertyValueFactory<>("detail"));
+
+
     }
 
     /**
@@ -75,7 +78,7 @@ public class MainView implements RootView{
 
     @FXML
     private void onClickTable(MouseEvent e){
-        if (e.getClickCount() != 2)
+        if (e.getClickCount() != 2 || contentTable.getSelectionModel().getSelectedItem() == null)
             return;
 
         EventNote eventNote = (EventNote) contentTable.getSelectionModel().getSelectedItem();
@@ -134,6 +137,8 @@ public class MainView implements RootView{
         this.data = FXCollections.observableList(controller.getSchedule().getEvents());
         System.out.println(controller.getSchedule().getEvents());
         this.contentTable.setItems(this.data);
+
+        refreshContent();
     }
 
 
@@ -160,5 +165,7 @@ public class MainView implements RootView{
 
     private void refreshContent(){
         contentTable.refresh();
+        contentTable.getSortOrder().add(contentTable.getColumns().get(0));
+        contentTable.getSortOrder().add(contentTable.getColumns().get(2));
     }
 }
