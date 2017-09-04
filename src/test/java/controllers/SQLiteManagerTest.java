@@ -1,20 +1,37 @@
 package controllers;
 
-
+import models.EventNote;
+import models.Schedule;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-class SQLiteManagerTest {
+import java.util.Date;
+
+import static org.junit.Assert.*;
+
+public class SQLiteManagerTest {
     private SQLiteManager manager;
 
     @Before
-    public void setup(){
-        manager = SQLiteManager.getInstance();
+    public void setUp() throws Exception {
+        manager = new SQLiteManager();
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     @Test
     public void testLoad(){
-        manager.loadData();
+        Schedule schedule = manager.loadData();
+        assertNotNull(schedule);
+    }
+
+    @Test
+    public void testAddNormalEvent(){
+//        EventNote eventNote = new EventNote("topic", "detail", new Date(), new Date());
+
     }
 
 }

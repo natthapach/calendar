@@ -12,7 +12,7 @@ public class MainController implements CoreController{
 
     public void start(){
 //        this.dbManager = JSONManager.getInstance();
-        this.dbManager = SQLiteManager.getInstance();
+        this.dbManager = new SQLiteManager();
         this.schedule = dbManager.loadData();
 //        this.schedule = new Schedule();
 //        schedule.setEvents(new ArrayList<>());

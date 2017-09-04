@@ -14,16 +14,16 @@ import java.util.Date;
  */
 public class SQLiteManager implements DatabaseManager {
 
-    private static SQLiteManager instance;
+//    private static SQLiteManager instance;
     private final SimpleDateFormat formatter;
 
-    public static SQLiteManager getInstance(){
-        if (instance == null)
-            instance = new SQLiteManager();
-        return instance;
-    }
+//    public static SQLiteManager getInstance(){
+//        if (instance == null)
+//            instance = new SQLiteManager();
+//        return instance;
+//    }
 
-    private SQLiteManager(){
+    public SQLiteManager(){
         formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm");
     }
 
