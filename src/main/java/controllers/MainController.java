@@ -3,24 +3,24 @@ package controllers;
 import models.EventNote;
 import models.Schedule;
 
-import java.util.ArrayList;
-
 public class MainController implements CoreController{
 
     private Schedule schedule;
     private DatabaseManager dbManager;
 
+    /**
+     * start the controller
+     * prepare connection to model
+     */
     public void start(){
-//        this.dbManager = JSONManager.getInstance();
-        this.dbManager = new SQLiteManager();
+        this.dbManager = SQLiteManager.getInstance();
         this.schedule = dbManager.loadData();
-//        this.schedule = new Schedule();
-//        schedule.setEvents(new ArrayList<>());
     }
 
     public Schedule getSchedule() {
         return schedule;
     }
+
 
     @Override
     public boolean editEvent(EventNote oldEvent, EventNote newEvent) {

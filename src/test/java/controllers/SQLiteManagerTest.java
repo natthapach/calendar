@@ -2,34 +2,35 @@ package controllers;
 
 import models.EventNote;
 import models.Schedule;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 import java.util.Date;
 
 import static org.junit.Assert.*;
 
-public class SQLiteManagerTest {
+class SQLiteManagerTest {
     private SQLiteManager manager;
 
-    @Before
-    public void setUp() throws Exception {
-        manager = new SQLiteManager();
+    @BeforeEach
+    void setUp() throws Exception {
+        manager = SQLiteManager.getInstance();
     }
 
-    @After
-    public void tearDown() throws Exception {
+    @AfterEach
+    void tearDown() throws Exception {
     }
 
     @Test
-    public void testLoad(){
+    void testLoad(){
         Schedule schedule = manager.loadData();
         assertNotNull(schedule);
     }
 
     @Test
-    public void testAddNormalEvent(){
+    void testAddNormalEvent(){
 //        EventNote eventNote = new EventNote("topic", "detail", new Date(), new Date());
 
     }

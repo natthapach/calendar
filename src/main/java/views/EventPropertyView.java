@@ -20,6 +20,9 @@ public class EventPropertyView implements AlertableEmptyTopic {
     private EventNote eventNote;
 
 
+    /**
+     * handle save action
+     */
     @FXML
     private void onClickSave(){
         String topic = topicTextField.getText();
@@ -42,20 +45,35 @@ public class EventPropertyView implements AlertableEmptyTopic {
         close();
     }
 
+    /**
+     * handle delete action
+     */
     @FXML
     private void onClickDelete(){
         root.delete(eventNote);
         close();
     }
 
+    /**
+     * close stage
+     */
     private void close(){
         Stage stage = (Stage) topicTextField.getScene().getWindow();
         stage.close();
     }
+
+    /**
+     * set root view to this view
+     * @param root
+     */
     public void setRoot(RootView root) {
         this.root = root;
     }
 
+    /**
+     * set data
+     * @param eventNote data
+     */
     public void setEventNote(EventNote eventNote) {
         this.eventNote = eventNote;
 

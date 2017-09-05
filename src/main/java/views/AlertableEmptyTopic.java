@@ -10,6 +10,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * provide showEmptyTopicDialog method
+ */
 public interface AlertableEmptyTopic {
     default void showEmptyTopicDialog(){
         Stage dialogStage = new Stage();

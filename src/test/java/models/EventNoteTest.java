@@ -2,8 +2,10 @@ package models;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
@@ -16,7 +18,7 @@ public class EventNoteTest {
     private String detail;
     private EventNote event;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         this.startTime = new Date(1000);
         this.stopTime = new Date(1200);
@@ -25,7 +27,7 @@ public class EventNoteTest {
         this.event = new EventNote(topic, detail, startTime, stopTime);
     }
 
-    @After
+    @AfterEach
     public void tearDown() throws Exception {
 
     }

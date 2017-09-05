@@ -14,18 +14,19 @@ import java.util.Date;
  */
 public class SQLiteManager implements DatabaseManager {
 
-//    private static SQLiteManager instance;
+    private static SQLiteManager instance;
     private final SimpleDateFormat formatter;
 
-//    public static SQLiteManager getInstance(){
-//        if (instance == null)
-//            instance = new SQLiteManager();
-//        return instance;
-//    }
+    public static SQLiteManager getInstance(){
+        if (instance == null)
+            instance = new SQLiteManager();
+        return instance;
+    }
 
-    public SQLiteManager(){
+    private SQLiteManager(){
         formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm");
     }
+
 
     @Override
     public Schedule loadData() {
@@ -161,6 +162,10 @@ public class SQLiteManager implements DatabaseManager {
         return false;
     }
 
+    /**
+     * initialize SQLite connection
+     * @return connection to DB
+     */
     private Connection prepareConnection(){
         try {
             Class.forName("org.sqlite.JDBC");

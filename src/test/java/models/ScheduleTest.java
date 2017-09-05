@@ -1,20 +1,21 @@
 package models;
 
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ScheduleTest {
+class ScheduleTest {
     private Schedule schedule;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() throws Exception {
         System.out.println("before each");
 
         ArrayList<EventNote> events = new ArrayList<>();
@@ -30,12 +31,12 @@ public class ScheduleTest {
         eventsField.set(schedule, events);
     }
 
-    @After
-    public void tearDown() throws Exception {
+    @AfterEach
+    void tearDown() throws Exception {
     }
 
     @Test
-    public void testAddOneEvent(){
+    void testAddOneEvent(){
         Date date = new Date();
         EventNote eventNote = new EventNote("new event", "detail", date, date);
         schedule.addEvent(eventNote);
@@ -44,7 +45,7 @@ public class ScheduleTest {
     }
 
     @Test
-    public void testAddTwoEvents(){
+    void testAddTwoEvents(){
         Date date = new Date();
         EventNote eventNote1 = new EventNote("new event 1", "detail", date, date);
         EventNote eventNote2 = new EventNote("new event 2", "detail", date, date);
@@ -56,7 +57,7 @@ public class ScheduleTest {
     }
 
     @Test
-    public void testDeleteOneExistEvent(){
+    void testDeleteOneExistEvent(){
         EventNote eventNote = schedule.getEvents().get(0);
         schedule.delete(eventNote);
 
@@ -64,7 +65,7 @@ public class ScheduleTest {
     }
 
     @Test
-    public void testDeleteOneNonExistEvent(){
+    void testDeleteOneNonExistEvent(){
         EventNote eventNote = new EventNote("event 1", "detail", new Date(), new Date());
         schedule.delete(eventNote);
 
@@ -72,7 +73,7 @@ public class ScheduleTest {
     }
 
     @Test
-    public void testUpdateEvent(){
+    void testUpdateEvent(){
         EventNote eventNoteTest = new EventNote("event test", "detail test", new Date(0, 0, 0), new Date(1, 1, 1));
         EventNote eventNote = schedule.getEvents().get(0);
 

@@ -58,7 +58,10 @@ public class NewEventView implements AlertableEmptyTopic{
         stage.close();
     }
 
-
+    /**
+     * set root view of this view for sent signal
+     * @param root
+     */
     public void setRoot(RootView root) {
         this.root = root;
     }

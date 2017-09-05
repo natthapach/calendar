@@ -76,6 +76,10 @@ public class MainView implements RootView{
         refreshContent();
     }
 
+    /**
+     * handle select event action
+     * @param e
+     */
     @FXML
     private void onClickTable(MouseEvent e){
         if (e.getClickCount() != 2 || contentTable.getSelectionModel().getSelectedItem() == null)
@@ -85,6 +89,9 @@ public class MainView implements RootView{
         createEventPropertyScene(eventNote);
     }
 
+    /**
+     * popup new event scene
+     */
     private void createNewEventScene(){
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -106,6 +113,10 @@ public class MainView implements RootView{
         }
     }
 
+    /**
+     * popup event property scene
+     * @param eventNote data to show in popup
+     */
     private void createEventPropertyScene(EventNote eventNote){
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -163,6 +174,9 @@ public class MainView implements RootView{
             refreshContent();
     }
 
+    /**
+     * refresh for show changing of data
+     */
     private void refreshContent(){
         contentTable.refresh();
         contentTable.getSortOrder().add(contentTable.getColumns().get(0));
