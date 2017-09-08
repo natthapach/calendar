@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Schedule {
 
-    @SerializedName("data") private List<EventNote> events;
+    private List<EventNote> events;
 
     public Schedule() {
         this(new ArrayList<>());

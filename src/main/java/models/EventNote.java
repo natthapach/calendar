@@ -5,10 +5,10 @@ import java.util.Date;
 
 public class EventNote implements Comparable<EventNote>{
 
-    @SerializedName("topic")        private String topic;
-    @SerializedName("detail")       private String detail;
-    @SerializedName("start_time")   private Date startTime;
-    @SerializedName("stop_time")    private Date stopTime;
+    private String topic;
+    private String detail;
+    private Date startTime;
+    private Date stopTime;
 
     public EventNote(String topic, String detail, Date startTime, Date stopTime) {
         this.topic = topic;
