@@ -18,6 +18,7 @@ public class SQLiteManager implements DatabaseManager {
     private final String DEFAULT_URL = "schedule.db";
     private final SimpleDateFormat formatter;
     private String url;
+    private Map<String, String> frequencyReverseMap;
 
     public static SQLiteManager getInstance(){
         if (instance == null)
@@ -28,6 +29,12 @@ public class SQLiteManager implements DatabaseManager {
     private SQLiteManager(){
         formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm");
         url = DEFAULT_URL;
+
+        frequencyReverseMap = new HashMap<>();
+        frequencyReverseMap.put(Schedule.ONCE, "O");
+        frequencyReverseMap.put(Schedule.DAILY, "D");
+        frequencyReverseMap.put(Schedule.WEEKLY, "W");
+        frequencyReverseMap.put(Schedule.MONTHLY, "M");
     }
 
 
@@ -81,18 +88,18 @@ public class SQLiteManager implements DatabaseManager {
             Connection conn = prepareConnection();
 
             if(conn != null){
-                String oldTopic = oldEvent.getTopic().replace("\'","\''");
-                String oldStartTime = formatter.format(oldEvent.getStartTime()).replace("\'","\''");
+                int id = oldEvent.getId();
 
                 String topic = newEvent.getTopic().replace("\'","\''");
                 String startTime = formatter.format(newEvent.getStartTime()).replace("\'","\''");
                 String detail = newEvent.getDetail().replace("\'","\''");
                 String endTime = formatter.format(newEvent.getStopTime()).replace("\'","\''");
+                String frequency = frequencyReverseMap.get(newEvent.getFrequency());
 
                 String sql = String.format("update events " +
-                                            "set topic=\'%s\', detail=\'%s\', start_time=\'%s\', end_time=\'%s\' " +
-                                            "where topic=\'%s\' and start_time=\'%s\'",
-                                            topic, detail, startTime, endTime, oldTopic, oldStartTime);
+                                            "set topic=\'%s\', detail=\'%s\', start_time=\'%s\', end_time=\'%s\', frequency=\'%s\' " +
+                                            "where id=%d",
+                                            topic, detail, startTime, endTime, frequency, id);
                 Statement statement = conn.createStatement();
                 int resultSet = statement.executeUpdate(sql);
 
@@ -120,10 +127,10 @@ public class SQLiteManager implements DatabaseManager {
                 String detail = event.getDetail().replace("\'","\''");
                 String startTime = formatter.format(event.getStartTime()).replace("\'","\''");
                 String endTime = formatter.format(event.getStopTime()).replace("\'","\''");
-
+                String frequency = frequencyReverseMap.get(event.getFrequency());
                 String sql = String.format("insert into events " +
-                                             "values (\'%s\', \'%s\', \'%s\', \'%s\')",
-                                            topic, detail, startTime, endTime);
+                                             "values (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')",
+                                            topic, detail, startTime, endTime, frequency);
                 Statement statement = conn.createStatement();
                 int resultSet = statement.executeUpdate(sql);
                 System.out.println("statement = " + statement);
@@ -146,12 +153,11 @@ public class SQLiteManager implements DatabaseManager {
             Connection conn = prepareConnection();
 
             if(conn != null){
-                String topic = event.getTopic().replace("\'","\''");
-                String startTime = formatter.format(event.getStartTime()).replace("\'","\''");
+                int id = event.getId();
 
                 String sql = String.format("delete from events " +
-                                            "where topic = \'%s\' and start_time = \'%s\'",
-                                            topic, startTime);
+                                            "where id = %d",
+                                            id);
                 Statement statement = conn.createStatement();
                 int resultSet = statement.executeUpdate(sql);
 
@@ -167,6 +173,43 @@ public class SQLiteManager implements DatabaseManager {
         }
 
         return false;
+    }
+
+    @Override
+    public EventNote getEventNote(String topic, Date startTime, String frequency) {
+        try {
+            String start_time = formatter.format(startTime);
+            topic = topic.replace("\'","\''");
+            String freq = frequencyReverseMap.get(frequency);
+
+            Connection connection = prepareConnection();
+            String sql = String.format("select events.id, events.topic, events.detail, events.start_time, events.end_time, event_frequency.name as frequency " +
+                            "from events " +
+                            "join event_frequency " +
+                            "on events.frequency = event_frequency.id " +
+                            "where topic=\'%s\' and start_time=\'%s\' and events.frequency=\'%s\'",
+                    topic, start_time, freq);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            connection.close();
+            if(resultSet.next()){
+                int id = resultSet.getInt(1);
+                String topicReal = resultSet.getString(2);
+                String detailReal = resultSet.getString(3);
+                Date startTimeReal = formatter.parse(resultSet.getString(4));
+                Date stopTimeReal = formatter.parse(resultSet.getString(5));
+                String frequencyReal = resultSet.getString(6);
+
+                return new EventNote(id, topicReal, detailReal, startTimeReal, stopTimeReal, frequencyReal);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     /**

@@ -7,19 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69cf1e49-af09-4b58-aac7-f0f6819adf5a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/controllers/JSONManagerTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/class-diagram/class-diagram.vpp" afterPath="$PROJECT_DIR$/class-diagram/class-diagram.vpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Schedule.java" afterPath="$PROJECT_DIR$/src/main/java/models/Schedule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/EventPropertyView.java" afterPath="$PROJECT_DIR$/src/main/java/views/EventPropertyView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/NewEventView.java" afterPath="$PROJECT_DIR$/src/main/java/views/NewEventView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/controllers/MainControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/controllers/MainControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/controllers/SQLiteManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/controllers/SQLiteManagerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/models/EventNoteTest.java" afterPath="$PROJECT_DIR$/src/test/java/models/EventNoteTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/models/ScheduleTest.java" afterPath="$PROJECT_DIR$/src/test/java/models/ScheduleTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MainView.fxml" afterPath="$PROJECT_DIR$/target/classes/MainView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,15 +26,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SQLiteManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SQLiteManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="45" column="74" lean-forward="false" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
-              <folding>
-                <element signature="method#update#0;class#SQLiteManager#0" expanded="false" />
-                <element signature="method#delete#0;class#SQLiteManager#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="-3016">
+              <caret line="101" column="89" lean-forward="false" selection-start-line="101" selection-start-column="89" selection-end-line="101" selection-end-column="89" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,7 +80,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
@@ -131,12 +119,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventPropertyView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/views/EventPropertyView.java">
+      <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="404">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;method#loadData#0;class#DatabaseManager#0" expanded="false" />
+                <element signature="docComment;method#update#0;class#DatabaseManager#0" expanded="false" />
+                <element signature="docComment;method#add#0;class#DatabaseManager#0" expanded="false" />
+                <element signature="docComment;method#delete#0;class#DatabaseManager#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/main/java/MainApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/EventPropertyView.fxml" />
         <option value="$PROJECT_DIR$/src/test/java/models/ScheduleTest2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/AlertableEmptyTopic.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/RootView.java" />
@@ -204,9 +196,10 @@
         <option value="$PROJECT_DIR$/src/test/java/controllers/MainControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/controllers/JSONManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Schedule.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" />
         <option value="$PROJECT_DIR$/src/main/resources/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/views/MainView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" />
       </list>
     </option>
   </component>
@@ -970,7 +963,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505027083075</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add column in mainview">
+      <created>1505045421301</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1505045421301</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1108,7 +1108,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create plan ui" />
     <MESSAGE value="plan to mvc" />
     <MESSAGE value="implement mvc" />
     <MESSAGE value="create NewEventView.fxml" />
@@ -1133,7 +1132,8 @@
     <MESSAGE value="change to JUit5, add documentation comment" />
     <MESSAGE value="remove unuse file,lib" />
     <MESSAGE value="restructuring model, still ERROR from another class" />
-    <option name="LAST_COMMIT_MESSAGE" value="restructuring model, still ERROR from another class" />
+    <MESSAGE value="add column in mainview" />
+    <option name="LAST_COMMIT_MESSAGE" value="add column in mainview" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1367,19 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding>
-            <element signature="docComment;method#loadData#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="docComment;method#update#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="docComment;method#delete#0;class#DatabaseManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/RootView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -1466,17 +1453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="45" column="74" lean-forward="false" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
-          <folding>
-            <element signature="method#update#0;class#SQLiteManager#0" expanded="false" />
-            <element signature="method#delete#0;class#SQLiteManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1496,6 +1472,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="56" column="80" lean-forward="false" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#loadData#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="docComment;method#update#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#DatabaseManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3016">
+          <caret line="101" column="89" lean-forward="false" selection-start-line="101" selection-start-column="89" selection-end-line="101" selection-end-column="89" />
           <folding />
         </state>
       </provider>

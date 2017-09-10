@@ -3,6 +3,8 @@ package controllers;
 import models.EventNote;
 import models.Schedule;
 
+import java.util.Date;
+
 /**
  * database manager manage request about data on database
  */
@@ -31,5 +33,7 @@ public interface DatabaseManager {
      * @return true when removing is complete
      */
     boolean delete(EventNote event);
+
+    EventNote getEventNote(String topic, Date startTime, String frequency);
 }
 
