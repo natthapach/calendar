@@ -128,7 +128,7 @@ public class SQLiteManager implements DatabaseManager {
                 String startTime = formatter.format(event.getStartTime()).replace("\'","\''");
                 String endTime = formatter.format(event.getStopTime()).replace("\'","\''");
                 String frequency = frequencyReverseMap.get(event.getFrequency());
-                String sql = String.format("insert into events " +
+                String sql = String.format("insert into events (topic, detail, start_time, end_time, frequency)" +
                                              "values (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')",
                                             topic, detail, startTime, endTime, frequency);
                 Statement statement = conn.createStatement();
@@ -192,7 +192,6 @@ public class SQLiteManager implements DatabaseManager {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
 
-            connection.close();
             if(resultSet.next()){
                 int id = resultSet.getInt(1);
                 String topicReal = resultSet.getString(2);
@@ -200,9 +199,10 @@ public class SQLiteManager implements DatabaseManager {
                 Date startTimeReal = formatter.parse(resultSet.getString(4));
                 Date stopTimeReal = formatter.parse(resultSet.getString(5));
                 String frequencyReal = resultSet.getString(6);
-
+                connection.close();
                 return new EventNote(id, topicReal, detailReal, startTimeReal, stopTimeReal, frequencyReal);
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ParseException e) {

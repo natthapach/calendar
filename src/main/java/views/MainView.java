@@ -26,6 +26,7 @@ public class MainView implements RootView{
     @FXML   private Button addBtn;
     @FXML   private TableView contentTable;
 
+
     @FXML
     public void initialize(){
         initColumn();

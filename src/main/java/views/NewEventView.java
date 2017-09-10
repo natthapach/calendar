@@ -1,6 +1,8 @@
 package views;
 
 import controllers.MainController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,6 +14,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import models.EventNote;
+import models.Schedule;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -27,7 +31,27 @@ public class NewEventView implements AlertableEmptyTopic{
     @FXML   private Spinner<Integer> startMins;
     @FXML   private Spinner<Integer> endHour;
     @FXML   private Spinner<Integer> endMins;
+    @FXML   private RadioButton onceRadio;
+    @FXML   private RadioButton dailyRadio;
+    @FXML   private RadioButton weeklyRadio;
+    @FXML   private RadioButton monthlyRadio;
     private RootView root;
+
+    /**
+     * set default datePicker's value
+     */
+    @FXML
+    public void initialize(){
+        datePicker.setValue(LocalDate.now());
+
+        ToggleGroup group = new ToggleGroup();
+        onceRadio.setToggleGroup(group);
+        dailyRadio.setToggleGroup(group);
+        weeklyRadio.setToggleGroup(group);
+        monthlyRadio.setToggleGroup(group);
+        onceRadio.setSelected(true);
+
+    }
 
     /**
      * handle on click submit button
@@ -50,7 +74,17 @@ public class NewEventView implements AlertableEmptyTopic{
         stopTime.setHours(endHour.getValue());
         stopTime.setMinutes(endMins.getValue());
 
-        EventNote event = new EventNote(0, topic, detail, startTime, stopTime, "daily");
+        String frequency = null;
+        if (onceRadio.isSelected())
+            frequency = Schedule.ONCE;
+        else if (dailyRadio.isSelected())
+            frequency = Schedule.DAILY;
+        else if (weeklyRadio.isSelected())
+            frequency = Schedule.WEEKLY;
+        else
+            frequency = Schedule.MONTHLY;
+
+        EventNote event = new EventNote(0, topic, detail, startTime, stopTime, frequency);
 
         root.add(event);
 
@@ -64,14 +98,6 @@ public class NewEventView implements AlertableEmptyTopic{
      */
     public void setRoot(RootView root) {
         this.root = root;
-    }
-
-    /**
-     * set default datePicker's value
-     */
-    @FXML
-    public void initialize(){
-        datePicker.setValue(LocalDate.now());
     }
 
 

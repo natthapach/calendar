@@ -41,9 +41,13 @@ public class MainController implements CoreController{
 
     public boolean addEvent(EventNote eventNote){
         boolean result = dbManager.add(eventNote);
-        if(result)
-            schedule.addEvent(eventNote);
-
+        if(result) {
+            EventNote newEventNote = dbManager.getEventNote(eventNote.getTopic(), eventNote.getStartTime(), eventNote.getFrequency());
+            if (newEventNote != null)
+                schedule.addEvent(newEventNote);
+            else
+                return false;
+        }
         return result;
     }
 

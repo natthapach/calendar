@@ -6,11 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69cf1e49-af09-4b58-aac7-f0f6819adf5a" name="Default" comment="">
+    <list default="true" id="69cf1e49-af09-4b58-aac7-f0f6819adf5a" name="Default" comment="complete add event">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule.db" afterPath="$PROJECT_DIR$/schedule.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MainView.fxml" afterPath="$PROJECT_DIR$/target/classes/MainView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/NewEventView.java" afterPath="$PROJECT_DIR$/src/main/java/views/NewEventView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" afterPath="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,9 +32,32 @@
       <file leaf-file-name="SQLiteManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3016">
-              <caret line="101" column="89" lean-forward="false" selection-start-line="101" selection-start-column="89" selection-end-line="101" selection-end-column="89" />
+            <state relative-caret-position="179">
+              <caret line="207" column="10" lean-forward="false" selection-start-line="207" selection-start-column="10" selection-end-line="207" selection-end-column="10" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewEventView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/NewEventView.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="122" column="72" lean-forward="false" selection-start-line="122" selection-start-column="72" selection-end-line="122" selection-end-column="72" />
+              <folding>
+                <element signature="n#BorderPane#0;n#top#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#children#0;n#FlowPane#0;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#padding#0;n#FlowPane#0;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#children#0;n#FlowPane#1;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#padding#0;n#FlowPane#1;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#children#0;n#FlowPane#2;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#opaqueInsets#0;n#FlowPane#2;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#padding#0;n#FlowPane#2;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+                <element signature="n#children#0;n#FlowPane#3;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,16 +74,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScheduleTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/models/ScheduleTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainControllerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/controllers/MainControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,23 +84,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventNoteTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/models/EventNoteTest.java">
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="23" column="79" lean-forward="false" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
+            <state relative-caret-position="36">
+              <caret line="166" column="29" lean-forward="true" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#editEvent#0;class#MainController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
+      <file leaf-file-name="RootView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/views/RootView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="56" column="80" lean-forward="false" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
+            <state relative-caret-position="206">
+              <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -92,29 +118,13 @@
       </file>
       <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+          <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-              <folding>
-                <marker date="1505045042951" expanded="true" signature="1974:1993" ph="..." />
-                <marker date="1505045042951" expanded="true" signature="1974:2012" ph="..." />
-                <marker date="1505045042951" expanded="true" signature="1974:2025" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SQLiteManagerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/controllers/SQLiteManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1473">
-              <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="1320">
+              <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,8 +147,8 @@
       <file leaf-file-name="NewEventView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/NewEventView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="52" column="88" lean-forward="true" selection-start-line="52" selection-start-column="88" selection-end-line="52" selection-end-column="88" />
+            <state relative-caret-position="215">
+              <caret line="88" column="14" lean-forward="false" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -158,6 +168,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>\&lt;\?xml version\=\&quot;1\.0\&quot; encoding\=\&quot;UTF\-8\&quot;\?\&gt;\n\n\&lt;\?import javafx\.geometry\.Insets\?\&gt;\n\&lt;\?import javafx\.scene\.control\.Button\?\&gt;\n\&lt;\?import javafx\.scene\.control\.DatePicker\?\&gt;\n\&lt;\?import javafx\.scene\.control\.Label\?\&gt;\n\&lt;\?import javafx\.scene\.control\.Spinner\?\&gt;\n\&lt;\?import javafx\.scene\.control\.TextArea\?\&gt;\n\&lt;\?import javafx\.scene\.control\.TextField\?\&gt;\n\&lt;\?import javafx\.scene\.layout\.BorderPane\?\&gt;\n\&lt;\?import javafx\.scene\.layout\.FlowPane\?\&gt;\n\&lt;\?import javafx\.scene\.text\.Font\?\&gt;\n\n\&lt;\?import java\.lang\.Integer\?\&gt;\n\&lt;\?import javafx\.scene\.control\.RadioButton\?\&gt;\n\&lt;BorderPane maxHeight\=\&quot;\-Infinity\&quot; maxWidth\=\&quot;\-Infinity\&quot; minHeight\=\&quot;\-Infinity\&quot; minWidth\=\&quot;\-Infinity\&quot; prefHeight\=\&quot;800\&quot; prefWidth\=\&quot;400\&quot; xmlns\=\&quot;http\:\/\/javafx\.com\/javafx\/8\.0\.111\&quot; xmlns\:fx\=\&quot;http\:\/\/javafx\.com\/fxml\/1\&quot; fx\:controller\=\&quot;views\.NewEventView\&quot;\&gt;\n   \&lt;top\&gt;\n      \&lt;BorderPane prefHeight\=\&quot;33\.0\&quot; prefWidth\=\&quot;300\.0\&quot; BorderPane\.alignment\=\&quot;CENTER\&quot;\&gt;\n         \&lt;center\&gt;\n             \&lt;fx\:define\&gt;\n                 \&lt;Integer fx\:id\=\&quot;minH\&quot; fx\:value\=\&quot;0\&quot;\/\&gt;\n                 \&lt;Integer fx\:id\=\&quot;maxH\&quot; fx\:value\=\&quot;23\&quot;\/\&gt;\n                 \&lt;Integer fx\:id\=\&quot;minM\&quot; fx\:value\=\&quot;0\&quot;\/\&gt;\n                 \&lt;Integer fx\:id\=\&quot;maxM\&quot; fx\:value\=\&quot;59\&quot;\/\&gt;\n             \&lt;\/fx\:define\&gt;\n            \&lt;Label alignment\=\&quot;CENTER\&quot; prefHeight\=\&quot;36\.0\&quot; prefWidth\=\&quot;183\.0\&quot; text\=\&quot;New Event\&quot; BorderPane\.alignment\=\&quot;CENTER\&quot;\&gt;\n               \&lt;font\&gt;\n                  \&lt;Font size\=\&quot;16\.0\&quot; \/\&gt;\n               \&lt;\/font\&gt;\n            \&lt;\/Label\&gt;\n         \&lt;\/center\&gt;\n      \&lt;\/BorderPane\&gt;\n   \&lt;\/top\&gt;\n   \&lt;center\&gt;\n       \&lt;FlowPane orientation\=\&quot;VERTICAL\&quot; prefHeight\=\&quot;504\.0\&quot; prefWidth\=\&quot;333\.0\&quot; BorderPane\.alignment\=\&quot;CENTER\&quot;\&gt;\n         \&lt;children\&gt;\n            \&lt;FlowPane orientation\=\&quot;VERTICAL\&quot; prefHeight\=\&quot;73\.0\&quot; prefWidth\=\&quot;339\.0\&quot;\&gt;\n               \&lt;children\&gt;\n                  \&lt;Label text\=\&quot;Topic\&quot; \/\&gt;\n                  \&lt;TextField fx\:id\=\&quot;topicTextField\&quot; prefHeight\=\&quot;31\.0\&quot; prefWidth\=\&quot;323\.0\&quot; \/\&gt;\n               \&lt;\/children\&gt;\n               \&lt;padding\&gt;\n                  \&lt;Insets bottom\=\&quot;10\.0\&quot; left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; top\=\&quot;10\.0\&quot; \/\&gt;\n               \&lt;\/padding\&gt;\n            \&lt;\/FlowPane\&gt;\n            \&lt;FlowPane orientation\=\&quot;VERTICAL\&quot; prefHeight\=\&quot;151\.0\&quot; prefWidth\=\&quot;329\.0\&quot;\&gt;\n               \&lt;children\&gt;\n                  \&lt;Label text\=\&quot;Detail\&quot; \/\&gt;\n                  \&lt;TextArea fx\:id\=\&quot;detailTextArea\&quot; prefHeight\=\&quot;106\.0\&quot; prefWidth\=\&quot;322\.0\&quot; \/\&gt;\n               \&lt;\/children\&gt;\n               \&lt;padding\&gt;\n                  \&lt;Insets bottom\=\&quot;10\.0\&quot; left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; top\=\&quot;10\.0\&quot; \/\&gt;\n               \&lt;\/padding\&gt;\n            \&lt;\/FlowPane\&gt;\n            \&lt;FlowPane orientation\=\&quot;VERTICAL\&quot; prefHeight\=\&quot;63\.0\&quot; prefWidth\=\&quot;300\.0\&quot;\&gt;\n               \&lt;children\&gt;\n                  \&lt;Label prefHeight\=\&quot;21\.0\&quot; prefWidth\=\&quot;70\.0\&quot; text\=\&quot;Date\&quot; \/\&gt;\n                  \&lt;DatePicker fx\:id\=\&quot;datePicker\&quot; prefHeight\=\&quot;29\.0\&quot; prefWidth\=\&quot;191\.0\&quot; \/\&gt;\n               \&lt;\/children\&gt;\n               \&lt;opaqueInsets\&gt;\n                  \&lt;Insets \/\&gt;\n               \&lt;\/opaqueInsets\&gt;\n               \&lt;padding\&gt;\n                  \&lt;Insets bottom\=\&quot;10\.0\&quot; left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; \/\&gt;\n               \&lt;\/padding\&gt;\n            \&lt;\/FlowPane\&gt;\n            \&lt;FlowPane orientation\=\&quot;VERTICAL\&quot; prefHeight\=\&quot;73\.0\&quot; prefWidth\=\&quot;300\.0\&quot;\&gt;\n               \&lt;children\&gt;\n                  \&lt;Label text\=\&quot;Start Time\&quot; \/\&gt;\n                  \&lt;FlowPane prefHeight\=\&quot;40\.0\&quot; prefWidth\=\&quot;276\.0\&quot;\&gt;\n                     \&lt;children\&gt;\n                        \&lt;Spinner fx\:id\=\&quot;startHour\&quot; prefHeight\=\&quot;31\.0\&quot; prefWidth\=\&quot;76\.0\&quot; min\=\&quot;\$minH\&quot; max\=\&quot;\$maxH\&quot;\/\&gt;\n                        \&lt;Label text\=\&quot;\:\&quot;\&gt;\n                           \&lt;FlowPane\.margin\&gt;\n                              \&lt;Insets left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; \/\&gt;\n                           \&lt;\/FlowPane\.margin\&gt;\n                        \&lt;\/Label\&gt;\n                        \&lt;Spinner fx\:id\=\&quot;startMins\&quot; prefHeight\=\&quot;31\.0\&quot; prefWidth\=\&quot;74\.0\&quot; min\=\&quot;\$minM\&quot; max\=\&quot;\$maxM\&quot;\/\&gt;\n                     \&lt;\/children\&gt;\n                  \&lt;\/FlowPane\&gt;\n               \&lt;\/children\&gt;\n               \&lt;padding\&gt;\n                  \&lt;Insets left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; top\=\&quot;10\.0\&quot; \/\&gt;\n               \&lt;\/padding\&gt;\&lt;\/FlowPane\&gt;\n            \&lt;FlowPane orientation\=\&quot;VERTICAL\&quot; prefHeight\=\&quot;89\.0\&quot; prefWidth\=\&quot;285\.0\&quot;\&gt;\n               \&lt;children\&gt;\n                  \&lt;Label text\=\&quot;End Time\&quot; \/\&gt;\n                  \&lt;FlowPane prefHeight\=\&quot;40\.0\&quot; prefWidth\=\&quot;276\.0\&quot;\&gt;\n                     \&lt;children\&gt;\n                        \&lt;Spinner fx\:id\=\&quot;endHour\&quot; prefHeight\=\&quot;31\.0\&quot; prefWidth\=\&quot;76\.0\&quot; min\=\&quot;\$minH\&quot; max\=\&quot;\$maxH\&quot;\/\&gt;\n                        \&lt;Label text\=\&quot;\:\&quot;\&gt;\n                           \&lt;FlowPane\.margin\&gt;\n                              \&lt;Insets left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; \/\&gt;\n                           \&lt;\/FlowPane\.margin\&gt;\n                        \&lt;\/Label\&gt;\n                        \&lt;Spinner fx\:id\=\&quot;endMins\&quot; prefHeight\=\&quot;31\.0\&quot; prefWidth\=\&quot;74\.0\&quot; min\=\&quot;\$minM\&quot; max\=\&quot;\$maxM\&quot;\/\&gt;\n                     \&lt;\/children\&gt;\n                  \&lt;\/FlowPane\&gt;\n               \&lt;\/children\&gt;\n               \&lt;padding\&gt;\n                  \&lt;Insets bottom\=\&quot;10\.0\&quot; left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; top\=\&quot;10\.0\&quot; \/\&gt;\n               \&lt;\/padding\&gt;\n            \&lt;\/FlowPane\&gt;\n            \&lt;FlowPane\&gt;\n               \&lt;children\&gt;\n                  \&lt;RadioButton text\=\&quot;Once\&quot;\&gt;\n\n                  \&lt;\/RadioButton\&gt;\n               \&lt;\/children\&gt;\n                \&lt;padding\&gt;\n                    \&lt;Insets bottom\=\&quot;10\.0\&quot; left\=\&quot;10\.0\&quot; right\=\&quot;10\.0\&quot; top\=\&quot;10\.0\&quot; \/\&gt;\n                \&lt;\/padding\&gt;\n            \&lt;\/FlowPane\&gt;\n            \&lt;FlowPane alignment\=\&quot;CENTER\&quot; prefHeight\=\&quot;45\.0\&quot; prefWidth\=\&quot;332\.0\&quot;\&gt;\n               \&lt;children\&gt;\n                  \&lt;Button mnemonicParsing\=\&quot;false\&quot; onAction\=\&quot;\#onClickSubmit\&quot; text\=\&quot;Add\&quot; \/\&gt;\n               \&lt;\/children\&gt;\n            \&lt;\/FlowPane\&gt;\n         \&lt;\/children\&gt;\n      \&lt;\/FlowPane\&gt;\n   \&lt;\/center\&gt;\n\&lt;\/BorderPane\&gt;\n</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -175,21 +190,18 @@
         <option value="$PROJECT_DIR$/src/main/java/StartApp.java" />
         <option value="$PROJECT_DIR$/src/main/resources/database.json" />
         <option value="$PROJECT_DIR$/src/main/java/views/MainApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
         <option value="$PROJECT_DIR$/target/classes/database.json" />
         <option value="$PROJECT_DIR$/out/artifacts/calendar/calendar.jnlp" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/JSONManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/EventPropertyView.fxml" />
         <option value="$PROJECT_DIR$/src/test/java/models/ScheduleTest2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/AlertableEmptyTopic.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/RootView.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/models/EventNote.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/CoreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/EventPropertyView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/views/NewEventView.java" />
         <option value="$PROJECT_DIR$/src/test/java/controllers/SQLiteManagerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/models/EventNoteTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/models/ScheduleTest.java" />
@@ -197,8 +209,11 @@
         <option value="$PROJECT_DIR$/src/test/java/controllers/JSONManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Schedule.java" />
         <option value="$PROJECT_DIR$/src/main/resources/MainView.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/views/MainView.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/views/MainView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/views/NewEventView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" />
       </list>
     </option>
@@ -970,7 +985,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505045421301</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="implement frequency feature in DB manager">
+      <created>1505047022015</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1505047022015</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1020,13 +1042,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32232347" sideWeight="0.47857141" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32232347" sideWeight="0.47857141" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32346243" sideWeight="0.518797" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2927107" sideWeight="0.48120302" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2927107" sideWeight="0.48120302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3029613" sideWeight="0.5649351" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32801822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1108,7 +1130,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="plan to mvc" />
     <MESSAGE value="implement mvc" />
     <MESSAGE value="create NewEventView.fxml" />
     <MESSAGE value="popup new event view, alert empty topic" />
@@ -1121,7 +1142,6 @@
     <MESSAGE value="planing to lab4" />
     <MESSAGE value="create interface for mvc" />
     <MESSAGE value="implement mvc interface" />
-    <MESSAGE value="complete add event" />
     <MESSAGE value="create event property view" />
     <MESSAGE value="complete delete event" />
     <MESSAGE value="complete edit event, remove &quot;save button&quot;" />
@@ -1133,7 +1153,9 @@
     <MESSAGE value="remove unuse file,lib" />
     <MESSAGE value="restructuring model, still ERROR from another class" />
     <MESSAGE value="add column in mainview" />
-    <option name="LAST_COMMIT_MESSAGE" value="add column in mainview" />
+    <MESSAGE value="implement frequency feature in DB manager" />
+    <MESSAGE value="complete add event" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete add event" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1143,12 +1165,6 @@
           <line>41</line>
           <properties />
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/views/NewEventView.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="6" />
@@ -1318,29 +1334,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/NewEventView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="23" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/JSONManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#editEvent#0;class#MainController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1537">
@@ -1362,16 +1356,8 @@
         <state relative-caret-position="504">
           <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/RootView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,14 +1405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controllers/MainControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/controllers/JSONManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1445,33 +1423,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/NewEventView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="52" column="88" lean-forward="true" selection-start-line="52" selection-start-column="88" selection-end-line="52" selection-end-column="88" />
+        <state relative-caret-position="1320">
+          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+    <entry file="file://$PROJECT_DIR$/src/test/java/controllers/MainControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/NewEventView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="122" column="72" lean-forward="false" selection-start-line="122" selection-start-column="72" selection-end-line="122" selection-end-column="72" />
           <folding>
-            <marker date="1505045042951" expanded="true" signature="1974:1993" ph="..." />
-            <marker date="1505045042951" expanded="true" signature="1974:2012" ph="..." />
-            <marker date="1505045042951" expanded="true" signature="1974:2025" ph="..." />
+            <element signature="n#BorderPane#0;n#top#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#children#0;n#FlowPane#0;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#padding#0;n#FlowPane#0;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#children#0;n#FlowPane#1;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#padding#0;n#FlowPane#1;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#children#0;n#FlowPane#2;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#opaqueInsets#0;n#FlowPane#2;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#padding#0;n#FlowPane#2;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+            <element signature="n#children#0;n#FlowPane#3;n#children#0;n#FlowPane#0;n#center#0;n#BorderPane#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/NewEventView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="88" column="14" lean-forward="false" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/RootView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+          <folding>
+            <element signature="method#editEvent#0;class#MainController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="56" column="80" lean-forward="false" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
+        <state relative-caret-position="36">
+          <caret line="166" column="29" lean-forward="true" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1491,8 +1512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3016">
-          <caret line="101" column="89" lean-forward="false" selection-start-line="101" selection-start-column="89" selection-end-line="101" selection-end-column="89" />
+        <state relative-caret-position="179">
+          <caret line="207" column="10" lean-forward="false" selection-start-line="207" selection-start-column="10" selection-end-line="207" selection-end-column="10" />
           <folding />
         </state>
       </provider>
