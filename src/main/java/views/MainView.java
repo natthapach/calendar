@@ -145,8 +145,8 @@ public class MainView implements RootView{
      */
     public void setController(CoreController controller){
         this.controller = controller;
-        this.data = FXCollections.observableList(controller.getSchedule().getEvents());
-        System.out.println(controller.getSchedule().getEvents());
+        this.data = FXCollections.observableList(controller.getSchedule().getAllEvents());
+        System.out.println(controller.getSchedule().getAllEvents());
         this.contentTable.setItems(this.data);
 
         refreshContent();

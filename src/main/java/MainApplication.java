@@ -8,7 +8,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import models.EventNote;
 import models.Schedule;
-import views.MainView;
 import views.RootView;
 
 import java.io.IOException;
@@ -33,7 +32,7 @@ public class MainApplication extends Application {
 
     private void showEvents() {
         Schedule schedule = controller.getSchedule();
-        for (EventNote event : schedule.getEvents()) {
+        for (EventNote event : schedule.getAllEvents()) {
             BorderPane pane = new BorderPane();
 
         }

@@ -22,7 +22,7 @@ class ScheduleTest {
         for (int i=0; i<10; i++){
             Date sdate = new Date(1000 + i*100);
             Date edate = new Date(1000 + i*101);
-            events.add(new EventNote("event "+i, "detail", sdate, edate));
+            events.add(new EventNote(i, "event "+i, "detail", sdate, edate, "daily"));
         }
         schedule = new Schedule(events);
         Field eventsField = schedule.getClass().getDeclaredField("events");
@@ -41,7 +41,7 @@ class ScheduleTest {
         EventNote eventNote = new EventNote("new event", "detail", date, date);
         schedule.addEvent(eventNote);
 
-        assertEquals(11, schedule.getEvents().size());
+        assertEquals(11, schedule.getAllEvents().size());
     }
 
     @Test
@@ -53,15 +53,15 @@ class ScheduleTest {
         schedule.addEvent(eventNote1);
         schedule.addEvent(eventNote2);
 
-        assertEquals(12, schedule.getEvents().size());
+        assertEquals(12, schedule.getAllEvents().size());
     }
 
     @Test
     void testDeleteOneExistEvent(){
-        EventNote eventNote = schedule.getEvents().get(0);
+        EventNote eventNote = schedule.getAllEvents().get(0);
         schedule.delete(eventNote);
 
-        assertEquals(9, schedule.getEvents().size());
+        assertEquals(9, schedule.getAllEvents().size());
     }
 
     @Test
@@ -69,20 +69,20 @@ class ScheduleTest {
         EventNote eventNote = new EventNote("event 1", "detail", new Date(), new Date());
         schedule.delete(eventNote);
 
-        assertEquals(10, schedule.getEvents().size());
+        assertEquals(10, schedule.getAllEvents().size());
     }
 
     @Test
     void testUpdateEvent(){
         EventNote eventNoteTest = new EventNote("event test", "detail test", new Date(0, 0, 0), new Date(1, 1, 1));
-        EventNote eventNote = schedule.getEvents().get(0);
+        EventNote eventNote = schedule.getAllEvents().get(0);
 
         schedule.update(eventNote, eventNoteTest);
 
-        assertEquals(eventNoteTest.getTopic(), schedule.getEvents().get(0).getTopic());
-        assertEquals(eventNoteTest.getDetail(), schedule.getEvents().get(0).getDetail());
-        assertEquals(eventNoteTest.getStartTime(), schedule.getEvents().get(0).getStartTime());
-        assertEquals(eventNoteTest.getStopTime(), schedule.getEvents().get(0).getStopTime());
+        assertEquals(eventNoteTest.getTopic(), schedule.getAllEvents().get(0).getTopic());
+        assertEquals(eventNoteTest.getDetail(), schedule.getAllEvents().get(0).getDetail());
+        assertEquals(eventNoteTest.getStartTime(), schedule.getAllEvents().get(0).getStartTime());
+        assertEquals(eventNoteTest.getStopTime(), schedule.getAllEvents().get(0).getStopTime());
     }
 
 }

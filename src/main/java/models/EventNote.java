@@ -1,20 +1,23 @@
 package models;
 
-import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 
 public class EventNote implements Comparable<EventNote>{
 
+    private int id;
     private String topic;
     private String detail;
     private Date startTime;
     private Date stopTime;
+    private String frequency;
 
-    public EventNote(String topic, String detail, Date startTime, Date stopTime) {
+    public EventNote(int id, String topic, String detail, Date startTime, Date stopTime, String frequency) {
+        this.id = id;
         this.topic = topic;
         this.detail = detail;
         this.startTime = startTime;
         this.stopTime = stopTime;
+        this.frequency = frequency;
     }
 
     public String getTopic() {
@@ -33,7 +36,13 @@ public class EventNote implements Comparable<EventNote>{
         return stopTime;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getFrequency() {
+        return frequency;
+    }
 
     @Override
     public String toString(){
