@@ -54,16 +54,8 @@ public class MainView implements RootView{
         });
         columns.get(2).setCellValueFactory(new PropertyValueFactory<>("topic"));
         columns.get(3).setCellValueFactory(new PropertyValueFactory<>("detail"));
+        columns.get(4).setCellValueFactory(new PropertyValueFactory<>("frequency"));
 
-
-    }
-
-    /**
-     * handle on click save button
-     */
-    @FXML
-    private void onClickSave(){
-//        controller.save();
     }
 
     /**

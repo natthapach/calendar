@@ -15,7 +15,9 @@ import java.util.Date;
 public class SQLiteManager implements DatabaseManager {
 
     private static SQLiteManager instance;
+    private final String DEFAULT_URL = "schedule.db";
     private final SimpleDateFormat formatter;
+    private String url;
 
     public static SQLiteManager getInstance(){
         if (instance == null)
@@ -25,6 +27,7 @@ public class SQLiteManager implements DatabaseManager {
 
     private SQLiteManager(){
         formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm");
+        url = DEFAULT_URL;
     }
 
 
@@ -37,20 +40,24 @@ public class SQLiteManager implements DatabaseManager {
             if(conn != null){
                 System.out.println("Connected to database ...");
 
-                String query = "select * from events";
+                String query = "select events.id, events.topic, events.detail, events.start_time, events.end_time, event_frequency.name as frequency " +
+                                "from events " +
+                                "join event_frequency " +
+                                "on events.frequency = event_frequency.id";
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
 
                 List<EventNote> events = new ArrayList<>();
 
                 while(resultSet.next()){
+                    int id = resultSet.getInt(1);
+                    String topic = resultSet.getString(2);
+                    String detail = resultSet.getString(3);
+                    Date startTime = formatter.parse(resultSet.getString(4));
+                    Date stopTime = formatter.parse(resultSet.getString(5));
+                    String frequency = resultSet.getString(6);
 
-                    String topic = resultSet.getString(1);
-                    String detail = resultSet.getString(2);
-                    Date startTime = formatter.parse(resultSet.getString(3));
-                    Date stopTime = formatter.parse(resultSet.getString(4));
-
-                    EventNote eventNote = new EventNote(topic, detail, startTime, stopTime);
+                    EventNote eventNote = new EventNote(id, topic, detail, startTime, stopTime, frequency);
                     events.add(eventNote);
 
                     System.out.println("eventNote = " + eventNote);
@@ -169,7 +176,7 @@ public class SQLiteManager implements DatabaseManager {
     private Connection prepareConnection(){
         try {
             Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:schedule.db";
+            String dbURL = "jdbc:sqlite:" + url;
             Connection conn = DriverManager.getConnection(dbURL);
 
             return conn;

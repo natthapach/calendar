@@ -38,6 +38,7 @@ public class Schedule {
 
     private void classifiedAllEvents(){
         for(EventNote event : allEvents){
+            System.out.println("event.getFrequency() = " + event.getFrequency());
             String freq = event.getFrequency();
             eventsMap.get(freq).add(event);
         }

@@ -3,13 +3,13 @@ package controllers;
 import models.EventNote;
 import models.Schedule;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
 import java.util.Date;
 
-import static org.junit.Assert.*;
 
 class SQLiteManagerTest {
     private SQLiteManager manager;
@@ -26,7 +26,7 @@ class SQLiteManagerTest {
     @Test
     void testLoad(){
         Schedule schedule = manager.loadData();
-        assertNotNull(schedule);
+        Assertions.assertNotNull(schedule);
     }
 
     @Test

@@ -50,7 +50,7 @@ public class NewEventView implements AlertableEmptyTopic{
         stopTime.setHours(endHour.getValue());
         stopTime.setMinutes(endMins.getValue());
 
-        EventNote event = new EventNote(topic, detail, startTime, stopTime);
+        EventNote event = new EventNote(0, topic, detail, startTime, stopTime, "daily");
 
         root.add(event);
 

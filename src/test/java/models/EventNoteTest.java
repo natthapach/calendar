@@ -1,8 +1,5 @@
 package models;
 
-import org.junit.After;
-import org.junit.Before;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,7 +21,7 @@ public class EventNoteTest {
         this.stopTime = new Date(1200);
         this.topic = "event test";
         this.detail = "detail test";
-        this.event = new EventNote(topic, detail, startTime, stopTime);
+        this.event = new EventNote(0,topic, detail, startTime, stopTime,"daily");
     }
 
     @AfterEach

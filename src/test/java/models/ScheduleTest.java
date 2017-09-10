@@ -38,7 +38,7 @@ class ScheduleTest {
     @Test
     void testAddOneEvent(){
         Date date = new Date();
-        EventNote eventNote = new EventNote("new event", "detail", date, date);
+        EventNote eventNote = new EventNote(11,"new event", "detail", date, date, "daily");
         schedule.addEvent(eventNote);
 
         assertEquals(11, schedule.getAllEvents().size());
@@ -47,8 +47,8 @@ class ScheduleTest {
     @Test
     void testAddTwoEvents(){
         Date date = new Date();
-        EventNote eventNote1 = new EventNote("new event 1", "detail", date, date);
-        EventNote eventNote2 = new EventNote("new event 2", "detail", date, date);
+        EventNote eventNote1 = new EventNote(11, "new event 1", "detail", date, date, Schedule.DAILY);
+        EventNote eventNote2 = new EventNote(12, "new event 2", "detail", date, date, Schedule.DAILY);
 
         schedule.addEvent(eventNote1);
         schedule.addEvent(eventNote2);
@@ -66,7 +66,7 @@ class ScheduleTest {
 
     @Test
     void testDeleteOneNonExistEvent(){
-        EventNote eventNote = new EventNote("event 1", "detail", new Date(), new Date());
+        EventNote eventNote = new EventNote(11,"event 1", "detail", new Date(), new Date(), Schedule.DAILY);
         schedule.delete(eventNote);
 
         assertEquals(10, schedule.getAllEvents().size());
@@ -74,7 +74,7 @@ class ScheduleTest {
 
     @Test
     void testUpdateEvent(){
-        EventNote eventNoteTest = new EventNote("event test", "detail test", new Date(0, 0, 0), new Date(1, 1, 1));
+        EventNote eventNoteTest = new EventNote(0,"event test", "detail test", new Date(0, 0, 0), new Date(1, 1, 1), Schedule.DAILY);
         EventNote eventNote = schedule.getAllEvents().get(0);
 
         schedule.update(eventNote, eventNoteTest);

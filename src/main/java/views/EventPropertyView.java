@@ -39,7 +39,7 @@ public class EventPropertyView implements AlertableEmptyTopic {
         stopTime.setHours(endHour.getValue());
         stopTime.setMinutes(endMins.getValue());
 
-        EventNote newEvent = new EventNote(topic, detail, startTime, stopTime);
+        EventNote newEvent = new EventNote(0, topic, detail, startTime, stopTime, "daily");
         root.edit(eventNote, newEvent);
 
         close();
