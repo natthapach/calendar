@@ -37,9 +37,7 @@ public class NewEventView implements AlertableEmptyTopic{
     @FXML   private RadioButton monthlyRadio;
     private RootView root;
 
-    /**
-     * set default datePicker's value
-     */
+
     @FXML
     public void initialize(){
         datePicker.setValue(LocalDate.now());

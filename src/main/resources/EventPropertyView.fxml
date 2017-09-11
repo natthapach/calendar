@@ -10,109 +10,139 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
-
 <?import java.lang.Integer?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="339.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.EventPropertyView">
-   <top>
-      <BorderPane prefHeight="33.0" prefWidth="300.0" BorderPane.alignment="CENTER">
-         <center>
-             <fx:define>
-                 <Integer fx:id="minH" fx:value="0"/>
-                 <Integer fx:id="maxH" fx:value="23"/>
-                 <Integer fx:id="minM" fx:value="0"/>
-                 <Integer fx:id="maxM" fx:value="59"/>
-             </fx:define>
-            <Label alignment="CENTER" prefHeight="36.0" prefWidth="183.0" text="Event Property" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </center>
-      </BorderPane>
-   </top>
-   <center>
-       <FlowPane orientation="VERTICAL" prefHeight="504.0" prefWidth="333.0" BorderPane.alignment="CENTER">
-         <children>
-            <FlowPane orientation="VERTICAL" prefHeight="73.0" prefWidth="339.0">
-               <children>
-                  <Label text="Topic" />
-                  <TextField fx:id="topicTextField" prefHeight="31.0" prefWidth="323.0" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </FlowPane>
-            <FlowPane orientation="VERTICAL" prefHeight="151.0" prefWidth="329.0">
-               <children>
-                  <Label text="Detail" />
-                  <TextArea fx:id="detailTextArea" prefHeight="106.0" prefWidth="322.0" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </FlowPane>
-            <FlowPane orientation="VERTICAL" prefHeight="63.0" prefWidth="300.0">
-               <children>
-                  <Label prefHeight="21.0" prefWidth="70.0" text="Date" />
-                  <DatePicker fx:id="datePicker" prefHeight="29.0" prefWidth="191.0" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" />
-               </padding>
-            </FlowPane>
-            <FlowPane orientation="VERTICAL" prefHeight="73.0" prefWidth="300.0">
-               <children>
-                  <Label text="Start Time" />
-                  <FlowPane prefHeight="40.0" prefWidth="276.0">
-                     <children>
-                        <Spinner fx:id="startHour" prefHeight="31.0" prefWidth="76.0" min="$minH" max="$maxH"/>
-                        <Label text=":">
-                           <FlowPane.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </FlowPane.margin>
-                        </Label>
-                        <Spinner fx:id="startMins" prefHeight="31.0" prefWidth="74.0" min="$minM" max="$maxM"/>
-                     </children>
-                  </FlowPane>
-               </children>
-               <padding>
-                  <Insets left="10.0" right="10.0" top="10.0" />
-               </padding></FlowPane>
-            <FlowPane orientation="VERTICAL" prefHeight="89.0" prefWidth="285.0">
-               <children>
-                  <Label text="End Time" />
-                  <FlowPane prefHeight="40.0" prefWidth="276.0">
-                     <children>
-                        <Spinner fx:id="endHour" prefHeight="31.0" prefWidth="76.0" min="$minH" max="$maxH"/>
-                        <Label text=":">
-                           <FlowPane.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </FlowPane.margin>
-                        </Label>
-                        <Spinner fx:id="endMins" prefHeight="31.0" prefWidth="74.0" min="$minM" max="$maxM"/>
-                     </children>
-                  </FlowPane>
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </FlowPane>
-            <FlowPane alignment="CENTER" prefHeight="45.0" prefWidth="332.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#onClickSave" text="Save" />
-               </children>
-               <children>
-                   <Button mnemonicParsing="false" onAction="#onClickDelete" text="Delete" >
-                       <FlowPane.margin>
-                           <Insets left="10.0" right="10.0" />
-                       </FlowPane.margin>
-                   </Button>
-               </children>
-            </FlowPane>
-         </children>
-      </FlowPane>
-   </center>
+<?import javafx.scene.control.RadioButton?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620"
+            prefWidth="320" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="views.EventPropertyView">
+    <top>
+        <BorderPane prefHeight="33.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+            <center>
+                <fx:define>
+                    <Integer fx:id="minH" fx:value="0"/>
+                    <Integer fx:id="maxH" fx:value="23"/>
+                    <Integer fx:id="minM" fx:value="0"/>
+                    <Integer fx:id="maxM" fx:value="59"/>
+                </fx:define>
+                <Label alignment="CENTER" prefHeight="36.0" prefWidth="183.0" text="New Event"
+                       BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+            </center>
+        </BorderPane>
+    </top>
+    <center>
+        <FlowPane orientation="VERTICAL" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="320"
+                  BorderPane.alignment="CENTER">
+            <children>
+                <FlowPane orientation="VERTICAL" minWidth="-Infinity" prefHeight="73.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Topic"/>
+                        <TextField fx:id="topicTextField" prefHeight="31.0" prefWidth="300.0"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </FlowPane>
+                <FlowPane orientation="VERTICAL" minWidth="-Infinity" prefHeight="151.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Detail"/>
+                        <TextArea fx:id="detailTextArea" prefHeight="106.0" prefWidth="300.0"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </FlowPane>
+                <FlowPane orientation="VERTICAL" minWidth="-Infinity" prefHeight="63.0" prefWidth="300.0">
+                    <children>
+                        <Label prefHeight="21.0" prefWidth="70.0" text="Date"/>
+                        <DatePicker fx:id="datePicker" prefHeight="29.0" prefWidth="191.0"/>
+                    </children>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0"/>
+                    </padding>
+                </FlowPane>
+                <FlowPane orientation="VERTICAL" minWidth="-Infinity" prefHeight="73.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Start Time"/>
+                        <FlowPane prefHeight="40.0" prefWidth="276.0">
+                            <children>
+                                <Spinner fx:id="startHour" prefHeight="31.0" prefWidth="76.0" min="$minH" max="$maxH"/>
+                                <Label text=":">
+                                    <FlowPane.margin>
+                                        <Insets left="10.0" right="10.0"/>
+                                    </FlowPane.margin>
+                                </Label>
+                                <Spinner fx:id="startMins" prefHeight="31.0" prefWidth="74.0" min="$minM" max="$maxM"/>
+                            </children>
+                        </FlowPane>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </FlowPane>
+                <FlowPane orientation="VERTICAL" minWidth="-Infinity" prefHeight="89.0" prefWidth="300.0">
+                    <children>
+                        <Label text="End Time"/>
+                        <FlowPane prefHeight="40.0" prefWidth="276.0">
+                            <children>
+                                <Spinner fx:id="endHour" prefHeight="31.0" prefWidth="76.0" min="$minH" max="$maxH"/>
+                                <Label text=":">
+                                    <FlowPane.margin>
+                                        <Insets left="10.0" right="10.0"/>
+                                    </FlowPane.margin>
+                                </Label>
+                                <Spinner fx:id="endMins" prefHeight="31.0" prefWidth="74.0" min="$minM" max="$maxM"/>
+                            </children>
+                        </FlowPane>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </FlowPane>
+                <FlowPane orientation="VERTICAL" minWidth="-Infinity" maxWidth="-Infinity" prefHeight="80.0"
+                          prefWidth="320.0">
+                    <children>
+                        <Label text="Frequency"></Label>
+                        <FlowPane orientation="HORIZONTAL">
+                            <children>
+                                <RadioButton text="Once " fx:id="onceRadio">
+
+                                </RadioButton>
+                                <RadioButton text="Daily " fx:id="dailyRadio">
+
+                                </RadioButton>
+                                <RadioButton text="Weekly " fx:id="weeklyRadio">
+
+                                </RadioButton>
+                                <RadioButton text="Monthly " fx:id="monthlyRadio">
+
+                                </RadioButton>
+                            </children>
+                        </FlowPane>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </FlowPane>
+                <FlowPane alignment="CENTER" maxWidth="-Infinity" prefHeight="45.0" prefWidth="300.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onClickSave" text="Save"/>
+                    </children>
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onClickDelete" text="Delete">
+                            <FlowPane.margin>
+                                <Insets left="10.0" right="10.0"/>
+                            </FlowPane.margin>
+                        </Button>
+                    </children>
+                </FlowPane>
+            </children>
+        </FlowPane>
+    </center>
 </BorderPane>
