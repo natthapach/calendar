@@ -55,12 +55,21 @@ public class Schedule {
         allEvents.add(event);
     }
 
+    /**
+     * delete event from schedule
+     * @param event
+     */
     public void delete(EventNote event){
         String freq = event.getFrequency();
         eventsMap.get(freq).remove(event);
         allEvents.remove(event);
     }
 
+    /**
+     * replace oldEvent with newEvent
+     * @param oldEvent
+     * @param newEvent
+     */
     public void update(EventNote oldEvent, EventNote newEvent){
         String oldFreq = oldEvent.getFrequency();
         String newFreq = newEvent.getFrequency();

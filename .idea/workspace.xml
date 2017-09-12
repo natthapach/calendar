@@ -7,11 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69cf1e49-af09-4b58-aac7-f0f6819adf5a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/class-diagram/Class Diagram1.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/class-diagram/class-diagram.vpp" afterPath="$PROJECT_DIR$/class-diagram/class-diagram.vpp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/calendar/gson-2.6.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/calendar/hamcrest-core-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/calendar/json-simple-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/calendar/junit-4.10.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jar" afterPath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jnlp" afterPath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jnlp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Schedule.java" afterPath="$PROJECT_DIR$/src/main/java/models/Schedule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/models/ScheduleTest.java" afterPath="$PROJECT_DIR$/src/test/java/models/ScheduleTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,7 +34,7 @@
       <file leaf-file-name="SQLiteManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
+            <state relative-caret-position="-2161">
               <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding />
             </state>
@@ -80,21 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RootView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RootView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/RootView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="176" column="1" lean-forward="false" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
+            <state relative-caret-position="468">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,6 +106,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="988">
+              <caret line="41" column="62" lean-forward="false" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+              <folding>
+                <element signature="docComment;method#loadData#0;class#DatabaseManager#0" expanded="false" />
+                <element signature="docComment;method#update#0;class#DatabaseManager#0" expanded="false" />
+                <element signature="docComment;method#add#0;class#DatabaseManager#0" expanded="false" />
+                <element signature="docComment;method#delete#0;class#DatabaseManager#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="NewEventView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/NewEventView.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,16 +131,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2495">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="1628">
+              <caret line="68" column="37" lean-forward="false" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
               <folding>
                 <element signature="e#617#618#0" expanded="true" />
                 <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#2284#2285#0" expanded="true" />
-                <element signature="e#2316#2317#0" expanded="true" />
+                <element signature="e#2454#2455#0" expanded="true" />
+                <element signature="e#2486#2487#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,16 +208,16 @@
         <option value="$PROJECT_DIR$/src/test/java/controllers/MainControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/controllers/JSONManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/MainView.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/MainView.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java" />
         <option value="$PROJECT_DIR$/src/main/resources/EventPropertyView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/views/NewEventView.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/EventPropertyView.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Schedule.java" />
         <option value="$PROJECT_DIR$/src/test/java/models/ScheduleTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/NewEventView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/Schedule.java" />
       </list>
     </option>
   </component>
@@ -1009,7 +1018,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505146367312</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="create jar file, divide diagram (pre/post)">
+      <created>1505230325893</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1505230325893</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1146,7 +1162,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="popup new event view, alert empty topic" />
     <MESSAGE value="refresh content table" />
     <MESSAGE value="add document comment" />
     <MESSAGE value="delete unnecessary from Schedule, delete unuse import" />
@@ -1171,7 +1186,8 @@
     <MESSAGE value="complete add event" />
     <MESSAGE value="complete delete,edit event" />
     <MESSAGE value="modify class-diagram, export diagram to jpg" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify class-diagram, export diagram to jpg" />
+    <MESSAGE value="create jar file, divide diagram (pre/post)" />
+    <option name="LAST_COMMIT_MESSAGE" value="create jar file, divide diagram (pre/post)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1211,8 +1227,8 @@
           <folding>
             <element signature="e#617#618#0" expanded="true" />
             <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#2284#2285#0" expanded="true" />
-            <element signature="e#2316#2317#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#2486#2487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1351,19 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="848">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#loadData#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="docComment;method#update#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="docComment;method#delete#0;class#DatabaseManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/EventPropertyView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
@@ -1412,14 +1415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -1433,19 +1428,6 @@
         <state relative-caret-position="477">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2495">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#2284#2285#0" expanded="true" />
-            <element signature="e#2316#2317#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1504,11 +1486,45 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="41" column="62" lean-forward="false" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+          <folding>
+            <element signature="docComment;method#loadData#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="docComment;method#update#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#DatabaseManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/RootView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="468">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SQLiteManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2161">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1628">
+          <caret line="68" column="37" lean-forward="false" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+          <folding>
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#2486#2487#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

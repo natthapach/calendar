@@ -34,6 +34,13 @@ public interface DatabaseManager {
      */
     boolean delete(EventNote event);
 
+    /**
+     * get specific event
+     * @param topic
+     * @param startTime
+     * @param frequency
+     * @return event that match topic, startTime and frequency
+     */
     EventNote getEventNote(String topic, Date startTime, String frequency);
 }
 

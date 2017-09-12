@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="calendar.jar" size="24903" download="eager" />
-    <jar href="gson-2.6.2.jar" size="229650" download="eager" />
-    <jar href="hamcrest-core-1.1.jar" size="76643" download="eager" />
-    <jar href="json-simple-1.1.1.jar" size="23931" download="eager" />
-    <jar href="junit-4.10.jar" size="253160" download="eager" />
+    <jar href="calendar.jar" size="25617" download="eager" />
     <jar href="junit-jupiter-api-5.0.0-RC3.jar" size="74676" download="eager" />
     <jar href="junit-platform-commons-1.0.0-RC3.jar" size="59218" download="eager" />
     <jar href="opentest4j-1.0.0-RC1.jar" size="6591" download="eager" />
