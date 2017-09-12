@@ -18,6 +18,7 @@ public class Schedule {
     private Map<String, List<EventNote>> eventsMap;
 
     public Schedule() {
+        this(new ArrayList<>());
     }
 
     public Schedule(List<EventNote> allEvents) {
@@ -38,7 +39,7 @@ public class Schedule {
 
     private void classifiedAllEvents(){
         for(EventNote event : allEvents){
-            System.out.println("event.getFrequency() = " + event.getFrequency());
+//            System.out.println("event.getFrequency() = " + event.getFrequency());
             String freq = event.getFrequency();
             eventsMap.get(freq).add(event);
         }

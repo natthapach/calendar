@@ -16,19 +16,14 @@ class ScheduleTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        System.out.println("before each");
 
         ArrayList<EventNote> events = new ArrayList<>();
         for (int i=0; i<10; i++){
             Date sdate = new Date(1000 + i*100);
             Date edate = new Date(1000 + i*101);
-            events.add(new EventNote(i, "event "+i, "detail", sdate, edate, "daily"));
+            events.add(new EventNote(i, "event "+i, "detail", sdate, edate, Schedule.DAILY));
         }
         schedule = new Schedule(events);
-        Field eventsField = schedule.getClass().getDeclaredField("events");
-        eventsField.setAccessible(true);
-
-        eventsField.set(schedule, events);
     }
 
     @AfterEach
@@ -38,7 +33,7 @@ class ScheduleTest {
     @Test
     void testAddOneEvent(){
         Date date = new Date();
-        EventNote eventNote = new EventNote(11,"new event", "detail", date, date, "daily");
+        EventNote eventNote = new EventNote(11,"new event", "detail", date, date, Schedule.DAILY);
         schedule.addEvent(eventNote);
 
         assertEquals(11, schedule.getAllEvents().size());
@@ -79,10 +74,7 @@ class ScheduleTest {
 
         schedule.update(eventNote, eventNoteTest);
 
-        assertEquals(eventNoteTest.getTopic(), schedule.getAllEvents().get(0).getTopic());
-        assertEquals(eventNoteTest.getDetail(), schedule.getAllEvents().get(0).getDetail());
-        assertEquals(eventNoteTest.getStartTime(), schedule.getAllEvents().get(0).getStartTime());
-        assertEquals(eventNoteTest.getStopTime(), schedule.getAllEvents().get(0).getStopTime());
+        assertNotEquals(-1, schedule.getAllEvents().indexOf(eventNoteTest));
     }
 
 }
