@@ -18,6 +18,9 @@ import models.EventNote;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.List;
 
 public class MainView implements RootView{
 
@@ -39,7 +42,7 @@ public class MainView implements RootView{
      */
     private void initColumn() {
         ObservableList<TableColumn<EventNote, String>> columns = contentTable.getColumns();
-        columns.get(0).setCellValueFactory(new PropertyValueFactory<>("startTime"));
+//        columns.get(0).setCellValueFactory(new PropertyValueFactory<>("startTime"));
         columns.get(0).setCellValueFactory(param -> {
             SimpleStringProperty property = new SimpleStringProperty();
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -62,10 +65,16 @@ public class MainView implements RootView{
     @FXML
     private void onSelectDate(){
         System.out.println("onSelectDate");
+        Date date = Date.from(datePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        System.out.println("date = " + date);
+        List<EventNote> events = controller.getSchedule().getEvents(date);
+        data = FXCollections.observableList(events);
+        contentTable.setItems(data);
     }
     @FXML
     private void onClickAll(){
-
+        data = FXCollections.observableList(controller.getSchedule().getAllEvents());
+        contentTable.setItems(data);
     }
     /**
      * handle on click add button
