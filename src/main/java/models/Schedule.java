@@ -1,9 +1,6 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Schedule {
     public static final String ONCE = "once";
@@ -87,6 +84,44 @@ public class Schedule {
         return allEvents;
     }
 
+    public List<EventNote> getEvents(Date date){
+        List<EventNote> events = new ArrayList<>();
+        events.addAll(getEventsFormOnce(date));
+        events.addAll(getEventsFormDaily(date));
+        events.addAll(getEventsFormWeekly(date));
+        events.addAll(getEventsFormMonthly(date));
+        return events;
+    }
+    private List<EventNote> getEventsFormOnce(Date date){
+        List<EventNote> events = new ArrayList<>();
+        for (EventNote eventNote : onceEvents){
+            Date eDate = eventNote.getStartTime();
+            if (eDate.getDate() == date.getDate() && eDate.getMonth() == date.getMonth() && eDate.getYear() == date.getYear())
+                events.add(eventNote);
+        }
+        return events;
+    }
+    private List<EventNote> getEventsFormDaily(Date date){
+        return dailyEvents;
+    }
+    private List<EventNote> getEventsFormWeekly(Date date){
+        List<EventNote> events = new ArrayList<>();
+        for (EventNote eventNote : weeklyEvents){
+            Date eDate = eventNote.getStartTime();
+            if (date.getDay() == eDate.getDay())
+                events.add(eventNote);
+        }
+        return events;
+    }
+    private List<EventNote> getEventsFormMonthly(Date date){
+        List<EventNote> events = new ArrayList<>();
+        for (EventNote event : monthlyEvents){
+            Date eDate = event.getStartTime();
+            if (date.getDate() == eDate.getDate())
+                events.add(event);
+        }
+        return events;
+    }
     @Override
     public String toString(){
         return "Schedule : ";
