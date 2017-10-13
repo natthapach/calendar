@@ -25,6 +25,8 @@ public class MainView implements RootView{
     private ObservableList<EventNote> data;
     @FXML   private Button addBtn;
     @FXML   private TableView contentTable;
+    @FXML   private Button allBtn;
+    @FXML   private DatePicker datePicker;
 
     @FXML
     public void initialize(){
@@ -57,7 +59,14 @@ public class MainView implements RootView{
         columns.get(4).setCellValueFactory(new PropertyValueFactory<>("frequency"));
 
     }
+    @FXML
+    private void onSelectDate(){
+        System.out.println("onSelectDate");
+    }
+    @FXML
+    private void onClickAll(){
 
+    }
     /**
      * handle on click add button
      */
