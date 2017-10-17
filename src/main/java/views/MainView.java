@@ -62,15 +62,21 @@ public class MainView implements RootView{
         columns.get(4).setCellValueFactory(new PropertyValueFactory<>("frequency"));
 
     }
+
+    /**
+     * show events relate to selected date
+     */
     @FXML
     private void onSelectDate(){
-        System.out.println("onSelectDate");
         Date date = Date.from(datePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-        System.out.println("date = " + date);
         List<EventNote> events = controller.getSchedule().getEvents(date);
         data = FXCollections.observableList(events);
         contentTable.setItems(data);
     }
+
+    /**
+     * show all events
+     */
     @FXML
     private void onClickAll(){
         data = FXCollections.observableList(controller.getSchedule().getAllEvents());
@@ -151,7 +157,7 @@ public class MainView implements RootView{
 
     /**
      * set controller to this view
-     * @param controller
+     * @param controller controller for this view
      */
     public void setController(CoreController controller){
         this.controller = controller;

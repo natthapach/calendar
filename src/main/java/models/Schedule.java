@@ -90,7 +90,6 @@ public class Schedule {
      * @return events relate date
      */
     public List<EventNote> getEvents(Date date){
-        System.out.println("getEvents date = " + date);
         List<EventNote> events = new ArrayList<>();
         events.addAll(getEventsFormOnce(date));
         events.addAll(getEventsFormDaily(date));
@@ -104,7 +103,6 @@ public class Schedule {
             Date eDate = eventNote.getStartTime();
             if (eDate.getDate() == date.getDate() && eDate.getMonth() == date.getMonth() && eDate.getYear() == date.getYear())
                 events.add(eventNote);
-            System.out.println("eDate = " + eDate);
         }
         return events;
     }
