@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="calendar.jar" size="25617" download="eager" />
+    <jar href="calendar.jar" size="26025" download="eager" />
     <jar href="junit-jupiter-api-5.0.0-RC3.jar" size="74676" download="eager" />
     <jar href="junit-platform-commons-1.0.0-RC3.jar" size="59218" download="eager" />
     <jar href="opentest4j-1.0.0-RC1.jar" size="6591" download="eager" />

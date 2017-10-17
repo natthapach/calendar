@@ -196,6 +196,7 @@ public class MainView implements RootView{
     private void refreshContent(){
         contentTable.refresh();
         contentTable.getSortOrder().add(contentTable.getColumns().get(0));
+        contentTable.getSortOrder().add(contentTable.getColumns().get(1));
         contentTable.getSortOrder().add(contentTable.getColumns().get(2));
     }
 }
