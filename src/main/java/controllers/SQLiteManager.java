@@ -27,7 +27,7 @@ public class SQLiteManager implements DatabaseManager {
     }
 
     private SQLiteManager(){
-        formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm");
+        formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm", Locale.ENGLISH);
         url = DEFAULT_URL;
 
         frequencyReverseMap = new HashMap<>();
