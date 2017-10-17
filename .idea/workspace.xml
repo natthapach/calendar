@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69cf1e49-af09-4b58-aac7-f0f6819adf5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/class-diagram/class-diagram.vpp" afterPath="$PROJECT_DIR$/class-diagram/class-diagram.vpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jar" afterPath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jnlp" afterPath="$PROJECT_DIR$/out/artifacts/calendar/calendar.jnlp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1155,7 +1151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508251231563</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="add class diagram">
+      <created>1508251916642</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1508251916642</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1313,7 +1316,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="demo events database, refactor variable name, create jar" />
     <MESSAGE value="create .jar complete" />
     <MESSAGE value="planing to lab4" />
     <MESSAGE value="create interface for mvc" />
@@ -1338,7 +1340,8 @@
     <MESSAGE value="modified view for Lab7" />
     <MESSAGE value="create getEvents by Date" />
     <MESSAGE value="add document comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="add document comment" />
+    <MESSAGE value="add class diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="add class diagram" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
