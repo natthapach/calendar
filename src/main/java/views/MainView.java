@@ -26,6 +26,8 @@ public class MainView implements RootView{
 
     private CoreController controller;
     private ObservableList<EventNote> data;
+    private String newEventPath;
+    private String editEventPath;
     @FXML   private Button addBtn;
     @FXML   private TableView contentTable;
     @FXML   private Button allBtn;

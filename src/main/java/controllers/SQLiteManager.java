@@ -28,7 +28,7 @@ public class SQLiteManager implements DatabaseManager {
 
     private SQLiteManager(){
         formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm", Locale.ENGLISH);
-        url = DEFAULT_URL;
+        url = (url==null)?DEFAULT_URL:url;
 
         frequencyReverseMap = new HashMap<>();
         frequencyReverseMap.put(Schedule.ONCE, "O");
@@ -37,6 +37,9 @@ public class SQLiteManager implements DatabaseManager {
         frequencyReverseMap.put(Schedule.MONTHLY, "M");
     }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     @Override
     public Schedule loadData() {

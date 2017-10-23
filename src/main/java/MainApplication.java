@@ -8,6 +8,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import models.EventNote;
 import models.Schedule;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import views.RootView;
 
 import java.io.IOException;
@@ -16,6 +18,7 @@ public class MainApplication extends Application {
     private Stage primaryStage;
     private CoreController controller;
     private RootView mainView;
+    private String title = "Calendar";
 
     public static void main(String[] args) {
         launch(args);
@@ -23,8 +26,9 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        ApplicationContext bf = new ClassPathXmlApplicationContext("config.xml");
         this.primaryStage = primaryStage;
-        this.controller = new MainController();
+        this.controller = (CoreController) bf.getBean("core-controller");
         this.controller.start();
         initRoot();
     }
@@ -41,7 +45,7 @@ public class MainApplication extends Application {
             primaryStage.setScene(sc);
 //            primaryStage.setResizable(false);
             primaryStage.show();
-            primaryStage.setTitle("Calendar");
+            primaryStage.setTitle(title);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -23,7 +23,7 @@ import java.util.Date;
 /**
  * Created by 708 on 8/29/2017.
  */
-public class NewEventView implements AlertableEmptyTopic{
+public class NewEventView implements AlertableEmptyTopic, ChildView{
     @FXML   private TextField topicTextField;
     @FXML   private TextArea detailTextArea;
     @FXML   private DatePicker datePicker;

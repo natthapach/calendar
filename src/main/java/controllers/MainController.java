@@ -13,7 +13,6 @@ public class MainController implements CoreController{
      * prepare connection to model
      */
     public void start(){
-        this.dbManager = SQLiteManager.getInstance();
         this.schedule = dbManager.loadData();
     }
 
@@ -21,7 +20,9 @@ public class MainController implements CoreController{
         return schedule;
     }
 
-
+    public void setDbManager(DatabaseManager dbManager){
+        this.dbManager = dbManager;
+    }
     @Override
     public boolean editEvent(EventNote oldEvent, EventNote newEvent) {
         boolean result = dbManager.update(oldEvent, newEvent);
@@ -39,7 +40,6 @@ public class MainController implements CoreController{
     @Override
     public boolean deleteEvent(EventNote event) {
         boolean result = dbManager.delete(event);
-        System.out.println("result = " + result);
         if(result)
             schedule.delete(event);
         return result;
