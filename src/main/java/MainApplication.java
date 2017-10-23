@@ -27,15 +27,6 @@ public class MainApplication extends Application {
         this.controller = new MainController();
         this.controller.start();
         initRoot();
-        showEvents();
-    }
-
-    private void showEvents() {
-        Schedule schedule = controller.getSchedule();
-        for (EventNote event : schedule.getAllEvents()) {
-            BorderPane pane = new BorderPane();
-
-        }
     }
 
     private void initRoot() {

@@ -81,6 +81,7 @@ public class MainView implements RootView{
     private void onClickAll(){
         data = FXCollections.observableList(controller.getSchedule().getAllEvents());
         contentTable.setItems(data);
+        datePicker.getEditor().clear();
     }
     /**
      * handle on click add button
@@ -194,6 +195,8 @@ public class MainView implements RootView{
      * refresh for show changing of data
      */
     private void refreshContent(){
+        if (datePicker.getValue() != null)
+            onSelectDate();
         contentTable.refresh();
         contentTable.getSortOrder().add(contentTable.getColumns().get(0));
         contentTable.getSortOrder().add(contentTable.getColumns().get(1));
