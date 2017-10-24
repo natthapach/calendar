@@ -26,8 +26,8 @@ public class MainView implements RootView{
 
     private CoreController controller;
     private ObservableList<EventNote> data;
-    private String newEventPath;
-    private String editEventPath;
+    private String newEventPath = "/NewEventView.fxml";
+    private String propertyEventPath = "/EventPropertyView.fxml";
     @FXML   private Button addBtn;
     @FXML   private TableView contentTable;
     @FXML   private Button allBtn;
@@ -114,10 +114,11 @@ public class MainView implements RootView{
     private void createNewEventScene(){
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/NewEventView.fxml"));
+            loader.setLocation(getClass().getResource(newEventPath));
             Pane mainLayout = loader.load();
-            NewEventView newEventView = loader.getController();
-            newEventView.setRoot(this);
+//            NewEventView newEventView = loader.getController();
+//            newEventView.setRoot(this);
+            ((ChildView) loader.getController()).setRoot(this);
 
             Scene sc = new Scene(mainLayout);
             Stage newEventStage = new Stage();
@@ -139,11 +140,13 @@ public class MainView implements RootView{
     private void createEventPropertyScene(EventNote eventNote){
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/EventPropertyView.fxml"));
+            loader.setLocation(getClass().getResource(propertyEventPath));
             Pane mainLayout = loader.load();
-            EventPropertyView eventPropertyView = loader.getController();
-            eventPropertyView.setRoot(this);
-            eventPropertyView.setEventNote(eventNote);
+//            EventPropertyView eventPropertyView = loader.getController();
+//            eventPropertyView.setRoot(this);
+//            eventPropertyView.setEventNote(eventNote);
+            ((ChildView) loader.getController()).setRoot(this);
+            ((EventView) loader.getController()).setEventNote(eventNote);
 
             Scene sc = new Scene(mainLayout);
             Stage eventPropertyStage = new Stage();

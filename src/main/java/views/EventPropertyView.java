@@ -11,7 +11,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 
-public class EventPropertyView implements AlertableEmptyTopic, EventView {
+public class EventPropertyView implements AlertableEmptyTopic, EventView, ChildView {
     @FXML   private TextField topicTextField;
     @FXML   private TextArea detailTextArea;
     @FXML   private DatePicker datePicker;
