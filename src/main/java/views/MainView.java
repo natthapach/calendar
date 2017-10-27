@@ -15,6 +15,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.EventNote;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -26,12 +29,19 @@ public class MainView implements RootView{
 
     private CoreController controller;
     private ObservableList<EventNote> data;
-    private String newEventPath = "/NewEventView.fxml";
-    private String propertyEventPath = "/EventPropertyView.fxml";
+    private String newEventPath;
+    private String propertyEventPath;
     @FXML   private Button addBtn;
     @FXML   private TableView contentTable;
     @FXML   private Button allBtn;
     @FXML   private DatePicker datePicker;
+
+    public MainView() {
+        System.out.println("MainView Constructor");
+        ApplicationContext bf = new ClassPathXmlApplicationContext("config.xml");
+        newEventPath = (String) bf.getBean("new-event-path");
+        propertyEventPath = (String) bf.getBean("event-property-path");
+    }
 
     @FXML
     public void initialize(){

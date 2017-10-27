@@ -30,6 +30,7 @@ public class MainApplication extends Application {
         this.primaryStage = primaryStage;
         this.controller = (CoreController) bf.getBean("core-controller");
         this.controller.start();
+        this.title = (String) bf.getBean("app-title");
         initRoot();
     }
 

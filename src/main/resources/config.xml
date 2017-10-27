@@ -8,4 +8,15 @@
         <bean id="db-controller" class="controllers.SQLiteManager" factory-method="getInstance" lazy-init="false">
                 <property name="url" value="schedule.db"/>
         </bean>
+
+        <!-- String config -->
+        <bean id="app-title" class="java.lang.String">
+                <constructor-arg value="Calendar HaHa"/>
+        </bean>
+        <bean id="new-event-path" class="java.lang.String">
+                <constructor-arg value="/NewEventView.fxml"/>
+        </bean>
+        <bean id="event-property-path" class="java.lang.String">
+                <constructor-arg value="/EventPropertyView.fxml"/>
+        </bean>
 </beans>
