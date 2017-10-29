@@ -1,6 +1,6 @@
-package controllers;
-import models.EventNote;
-import models.Schedule;
+package client.controllers;
+import common.models.EventNote;
+import common.models.Schedule;
 
 /**
  * core controller manage requests from view

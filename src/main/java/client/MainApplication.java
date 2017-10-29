@@ -1,16 +1,14 @@
-import controllers.CoreController;
-import controllers.MainController;
+package client;
+
+import client.controllers.CoreController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import models.EventNote;
-import models.Schedule;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import views.RootView;
+import client.views.RootView;
 
 import java.io.IOException;
 
@@ -26,7 +24,7 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        ApplicationContext bf = new ClassPathXmlApplicationContext("config.xml");
+        ApplicationContext bf = new ClassPathXmlApplicationContext("client-config.xml");
         this.primaryStage = primaryStage;
         this.controller = (CoreController) bf.getBean("core-controller");
         this.controller.start();

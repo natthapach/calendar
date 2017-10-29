@@ -8,10 +8,16 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="calendar.jar" size="26025" download="eager" />
+    <jar href="calendar.jar" size="27160" download="eager" />
     <jar href="junit-jupiter-api-5.0.0-RC3.jar" size="74676" download="eager" />
     <jar href="junit-platform-commons-1.0.0-RC3.jar" size="59218" download="eager" />
     <jar href="opentest4j-1.0.0-RC1.jar" size="6591" download="eager" />
+    <jar href="spring-aop-5.0.0.RELEASE.jar" size="360614" download="eager" />
+    <jar href="spring-beans-5.0.0.RELEASE.jar" size="654710" download="eager" />
+    <jar href="spring-context-5.0.0.RELEASE.jar" size="1070994" download="eager" />
+    <jar href="spring-core-5.0.0.RELEASE.jar" size="1207463" download="eager" />
+    <jar href="spring-expression-5.0.0.RELEASE.jar" size="262695" download="eager" />
+    <jar href="spring-jcl-5.0.0.RELEASE.jar" size="15666" download="eager" />
     <jar href="sqlite-jdbc-3.20.0.jar" size="6637012" download="eager" />
   </resources>
   <jfx:javafx-desc  width="600" height="400" main-class="MainApplication"  name="calendar" />

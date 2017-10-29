@@ -1,17 +1,19 @@
-package views;
+package client.views;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import models.EventNote;
-import models.Schedule;
+import common.models.EventNote;
+import common.models.Schedule;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-
-public class EventPropertyView implements AlertableEmptyTopic, EventView, ChildView {
+/**
+ * Created by 708 on 8/29/2017.
+ */
+public class NewEventView implements AlertableEmptyTopic, ChildView{
     @FXML   private TextField topicTextField;
     @FXML   private TextArea detailTextArea;
     @FXML   private DatePicker datePicker;
@@ -24,7 +26,6 @@ public class EventPropertyView implements AlertableEmptyTopic, EventView, ChildV
     @FXML   private RadioButton weeklyRadio;
     @FXML   private RadioButton monthlyRadio;
     private RootView root;
-    private EventNote eventNote;
 
 
     @FXML
@@ -36,12 +37,17 @@ public class EventPropertyView implements AlertableEmptyTopic, EventView, ChildV
         dailyRadio.setToggleGroup(group);
         weeklyRadio.setToggleGroup(group);
         monthlyRadio.setToggleGroup(group);
+        onceRadio.setSelected(true);
+
     }
+
     /**
-     * handle save action
+     * handle on click submit button
+     * check empty topic to alert popup
+     * create new EventNote and send to controller
      */
     @FXML
-    private void onClickSave(){
+    private void onClickSubmit(){
         String topic = topicTextField.getText();
         if(topic.equals("")) {
             showEmptyTopicDialog();
@@ -63,64 +69,24 @@ public class EventPropertyView implements AlertableEmptyTopic, EventView, ChildV
             frequency = Schedule.DAILY;
         else if (weeklyRadio.isSelected())
             frequency = Schedule.WEEKLY;
-        else if (monthlyRadio.isSelected())
+        else
             frequency = Schedule.MONTHLY;
 
-        EventNote newEvent = new EventNote(0, topic, detail, startTime, stopTime, frequency);
-        root.edit(eventNote, newEvent);
+        EventNote event = new EventNote(0, topic, detail, startTime, stopTime, frequency);
 
-        close();
-    }
+        root.add(event);
 
-    /**
-     * handle delete action
-     */
-    @FXML
-    private void onClickDelete(){
-        root.delete(eventNote);
-        close();
-    }
-
-    /**
-     * close stage
-     */
-    private void close(){
         Stage stage = (Stage) topicTextField.getScene().getWindow();
         stage.close();
     }
 
     /**
-     * set root view to this view
+     * set root view of this view for sent signal
      * @param root
      */
     public void setRoot(RootView root) {
         this.root = root;
     }
 
-    /**
-     * set data
-     * @param eventNote data
-     */
-    public void setEventNote(EventNote eventNote) {
-        this.eventNote = eventNote;
-
-        topicTextField.setText(eventNote.getTopic());
-        detailTextArea.setText(eventNote.getDetail());
-        datePicker.setValue(eventNote.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-        startHour.getValueFactory().setValue(eventNote.getStartTime().getHours());
-        startMins.getValueFactory().setValue(eventNote.getStartTime().getMinutes());
-        endHour.getValueFactory().setValue(eventNote.getStopTime().getHours());
-        endMins.getValueFactory().setValue(eventNote.getStopTime().getMinutes());
-
-        String frequency = eventNote.getFrequency();
-        if (Schedule.ONCE.equals(frequency))
-            onceRadio.setSelected(true);
-        else if (Schedule.DAILY.equals(frequency))
-            dailyRadio.setSelected(true);
-        else if (Schedule.WEEKLY.equals(frequency))
-            weeklyRadio.setSelected(true);
-        else if (Schedule.MONTHLY.equals(frequency))
-            monthlyRadio.setSelected(true);
-    }
 
 }

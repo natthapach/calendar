@@ -1,6 +1,6 @@
-package views;
+package client.views;
 
-import controllers.CoreController;
+import client.controllers.CoreController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import models.EventNote;
+import common.models.EventNote;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -38,7 +38,7 @@ public class MainView implements RootView{
 
     public MainView() {
         System.out.println("MainView Constructor");
-        ApplicationContext bf = new ClassPathXmlApplicationContext("config.xml");
+        ApplicationContext bf = new ClassPathXmlApplicationContext("client-config.xml");
         newEventPath = (String) bf.getBean("new-event-path");
         propertyEventPath = (String) bf.getBean("event-property-path");
     }

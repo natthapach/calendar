@@ -1,8 +1,9 @@
-package models;
+package common.models;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Schedule {
+public class Schedule implements Serializable{
     public static final String ONCE = "once";
     public static final String DAILY = "daily";
     public static final String WEEKLY = "weekly";

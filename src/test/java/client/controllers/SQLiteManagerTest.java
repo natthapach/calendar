@@ -1,14 +1,11 @@
-package controllers;
+package client.controllers;
 
-import models.EventNote;
-import models.Schedule;
+import common.models.Schedule;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
-import java.util.Date;
+import server.SQLiteManager;
 
 
 class SQLiteManagerTest {

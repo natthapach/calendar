@@ -1,4 +1,4 @@
-package controllers;
+package client.controllers;
 
 
 import org.junit.jupiter.api.AfterEach;

@@ -21,6 +21,12 @@
       <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.0-RC3" />
       <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-RC3" />
       <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.0.0-RC1" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.0.RELEASE" />
     </root>
   </artifact>
 </component>

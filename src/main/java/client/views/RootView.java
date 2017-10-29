@@ -1,7 +1,7 @@
-package views;
+package client.views;
 
-import controllers.CoreController;
-import models.EventNote;
+import client.controllers.CoreController;
+import common.models.EventNote;
 
 
 public interface RootView {

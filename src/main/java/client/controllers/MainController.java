@@ -1,7 +1,8 @@
-package controllers;
+package client.controllers;
 
-import models.EventNote;
-import models.Schedule;
+import common.DatabaseManager;
+import common.models.EventNote;
+import common.models.Schedule;
 
 public class MainController implements CoreController{
 

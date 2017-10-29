@@ -1,29 +1,17 @@
-package views;
+package client.views;
 
-import controllers.MainController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import models.EventNote;
-import models.Schedule;
+import common.models.EventNote;
+import common.models.Schedule;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-/**
- * Created by 708 on 8/29/2017.
- */
-public class NewEventView implements AlertableEmptyTopic, ChildView{
+
+public class EventPropertyView implements AlertableEmptyTopic, EventView, ChildView {
     @FXML   private TextField topicTextField;
     @FXML   private TextArea detailTextArea;
     @FXML   private DatePicker datePicker;
@@ -36,6 +24,7 @@ public class NewEventView implements AlertableEmptyTopic, ChildView{
     @FXML   private RadioButton weeklyRadio;
     @FXML   private RadioButton monthlyRadio;
     private RootView root;
+    private EventNote eventNote;
 
 
     @FXML
@@ -47,17 +36,12 @@ public class NewEventView implements AlertableEmptyTopic, ChildView{
         dailyRadio.setToggleGroup(group);
         weeklyRadio.setToggleGroup(group);
         monthlyRadio.setToggleGroup(group);
-        onceRadio.setSelected(true);
-
     }
-
     /**
-     * handle on click submit button
-     * check empty topic to alert popup
-     * create new EventNote and send to controller
+     * handle save action
      */
     @FXML
-    private void onClickSubmit(){
+    private void onClickSave(){
         String topic = topicTextField.getText();
         if(topic.equals("")) {
             showEmptyTopicDialog();
@@ -79,24 +63,64 @@ public class NewEventView implements AlertableEmptyTopic, ChildView{
             frequency = Schedule.DAILY;
         else if (weeklyRadio.isSelected())
             frequency = Schedule.WEEKLY;
-        else
+        else if (monthlyRadio.isSelected())
             frequency = Schedule.MONTHLY;
 
-        EventNote event = new EventNote(0, topic, detail, startTime, stopTime, frequency);
+        EventNote newEvent = new EventNote(0, topic, detail, startTime, stopTime, frequency);
+        root.edit(eventNote, newEvent);
 
-        root.add(event);
+        close();
+    }
 
+    /**
+     * handle delete action
+     */
+    @FXML
+    private void onClickDelete(){
+        root.delete(eventNote);
+        close();
+    }
+
+    /**
+     * close stage
+     */
+    private void close(){
         Stage stage = (Stage) topicTextField.getScene().getWindow();
         stage.close();
     }
 
     /**
-     * set root view of this view for sent signal
+     * set root view to this view
      * @param root
      */
     public void setRoot(RootView root) {
         this.root = root;
     }
 
+    /**
+     * set data
+     * @param eventNote data
+     */
+    public void setEventNote(EventNote eventNote) {
+        this.eventNote = eventNote;
+
+        topicTextField.setText(eventNote.getTopic());
+        detailTextArea.setText(eventNote.getDetail());
+        datePicker.setValue(eventNote.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        startHour.getValueFactory().setValue(eventNote.getStartTime().getHours());
+        startMins.getValueFactory().setValue(eventNote.getStartTime().getMinutes());
+        endHour.getValueFactory().setValue(eventNote.getStopTime().getHours());
+        endMins.getValueFactory().setValue(eventNote.getStopTime().getMinutes());
+
+        String frequency = eventNote.getFrequency();
+        if (Schedule.ONCE.equals(frequency))
+            onceRadio.setSelected(true);
+        else if (Schedule.DAILY.equals(frequency))
+            dailyRadio.setSelected(true);
+        else if (Schedule.WEEKLY.equals(frequency))
+            weeklyRadio.setSelected(true);
+        else if (Schedule.MONTHLY.equals(frequency))
+            monthlyRadio.setSelected(true);
+    }
 
 }

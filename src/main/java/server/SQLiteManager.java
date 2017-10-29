@@ -1,7 +1,8 @@
-package controllers;
+package server;
 
-import models.EventNote;
-import models.Schedule;
+import common.DatabaseManager;
+import common.models.EventNote;
+import common.models.Schedule;
 
 import java.sql.*;
 import java.text.ParseException;
@@ -26,7 +27,7 @@ public class SQLiteManager implements DatabaseManager {
         return instance;
     }
 
-    private SQLiteManager(){
+    public SQLiteManager(){
         formatter = new SimpleDateFormat("dd-MM-yyyy HH.mm", Locale.ENGLISH);
         url = (url==null)?DEFAULT_URL:url;
 

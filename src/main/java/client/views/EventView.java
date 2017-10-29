@@ -1,6 +1,6 @@
-package views;
+package client.views;
 
-import models.EventNote;
+import common.models.EventNote;
 
 public interface EventView {
     void setEventNote(EventNote eventNote);

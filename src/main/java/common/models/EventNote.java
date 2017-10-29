@@ -1,8 +1,9 @@
-package models;
+package common.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class EventNote implements Comparable<EventNote>{
+public class EventNote implements Comparable<EventNote>, Serializable{
 
     private int id;
     private String topic;

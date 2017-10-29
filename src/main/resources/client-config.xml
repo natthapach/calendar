@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="db-service"
+          class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="rmi://localhost/xxx" />
+        <property name="serviceInterface" value="common.DatabaseManager" />
+    </bean>
+    <bean id="core-controller" class="client.controllers.MainController">
+        <property name="dbManager" ref="db-service"/>
+    </bean>
+
+    <!-- String config -->
+    <bean id="app-title" class="java.lang.String">
+        <constructor-arg value="Calendar HaHa"/>
+    </bean>
+    <bean id="new-event-path" class="java.lang.String">
+        <constructor-arg value="/NewEventView.fxml"/>
+    </bean>
+    <bean id="event-property-path" class="java.lang.String">
+        <constructor-arg value="/EventPropertyView.fxml"/>
+    </bean>
+</beans>

@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="db-service" class="server.SQLiteManager">
+        <property name="url" value="schedule.db"/>
+    </bean>
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="service" ref="db-service"/>
+        <property name="serviceName" value="xxx"/>
+        <property name="serviceInterface" value="common.DatabaseManager"/>
+        <property name="registryPort" value="1099"/>
+    </bean>
+</beans>

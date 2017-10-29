@@ -1,7 +1,7 @@
-package controllers;
+package common;
 
-import models.EventNote;
-import models.Schedule;
+import common.models.EventNote;
+import common.models.Schedule;
 
 import java.util.Date;
 
